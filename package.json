@@ -12,15 +12,23 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.12",
     "@types/react-router-dom": "^5.3.3",
+    "framer-motion": "^12.23.12",
+    "i18next": "^25.4.2",
+    "i18next-browser-languagedetector": "^8.2.0",
+    "i18next-http-backend": "^3.0.2",
+    "lucide-react": "^0.542.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-i18next": "^15.7.3",
     "react-router-dom": "^7.8.2",
+    "react-world-flags": "^1.6.0",
     "tailwindcss": "^4.1.12"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
+    "@types/react-world-flags": "^1.6.0",
     "@vitejs/plugin-react-swc": "^4.0.0",
     "eslint": "^9.33.0",
     "eslint-plugin-react-hooks": "^5.2.0",

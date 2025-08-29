@@ -1,0 +1,29 @@
+{
+    "header": {
+        "home": "الرئيسية",
+        "about": "من نحن",
+        "about_us": "من نحن",
+        "our_partners": "شركاؤنا",
+        "our_clients": "عملاؤنا",
+        "services": "الخدمات",
+        "design_build_solutions": "حلول التصميم والبناء",
+        "ai_surveillance_systems": "أنظمة المراقبة بالذكاء الاصطناعي",
+        "command_control_centers": "مراكز القيادة والتحكم",
+        "smart_security_systems": "الأنظمة الأمنية الذكية",
+        "emergency_critical_communications": "اتصالات الطوارئ والاتصالات الحرجة",
+        "security_consulting_operations": "الاستشارات والعمليات الأمنية",
+        "projects": "المشاريع",
+        "insights": "رؤى",
+        "contact": "اتصل بنا",
+        "new": "جديد",
+        "english": "الإنجليزية",
+        "arabic": "العربية"
+    },
+    "hero": {
+        "title": "نرسم ملامح المستقبل",
+        "subtitle": "قيادة عالمية في التنمية المستدامة والابتكار."
+    },
+    "footer": {
+        "title": "تذييل"
+    }
+}

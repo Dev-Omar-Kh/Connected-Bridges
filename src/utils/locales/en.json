@@ -1,0 +1,29 @@
+{
+    "header": {
+        "home": "Home",
+        "about": "About",
+        "about_us": "About Us",
+        "our_partners": "Our Partners",
+        "our_clients": "Our Clients",
+        "services": "Services",
+        "design_build_solutions": "Design & Build Solutions",
+        "ai_surveillance_systems": "AI Surveillance Systems",
+        "command_control_centers": "Command & Control Centers",
+        "smart_security_systems": "Smart Security Systems",
+        "emergency_critical_communications": "Emergency & Critical Communications",
+        "security_consulting_operations": "Security Consulting & Operations",
+        "projects": "Projects",
+        "insights": "Insights",
+        "contact": "Contact",
+        "new": "New",
+        "english": "English",
+        "arabic": "Arabic"
+    },
+    "hero": {
+        "title": "Redefining The Future",
+        "subtitle": "Global leadership in sustainable development and innovation."
+    },
+    "footer": {
+        "title": "Footer"
+    }
+}
