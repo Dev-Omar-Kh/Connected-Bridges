@@ -24,7 +24,7 @@ import { useTranslation } from 'react-i18next';
 import TranslateBtn from '../buttons/TranslateBtn';
 
 // ====== import images ====== //
-import whiteLogo from '../../assets/images/white-logo.png';
+import whiteLogo from '../../assets/images/white-logo-size.png';
 import colorsLogo from '../../assets/images/light-bg-logo.png';
 
 // ====== static-data ====== //
@@ -32,8 +32,24 @@ import colorsLogo from '../../assets/images/light-bg-logo.png';
 export default function Header() {
 
     const { t, i18n } = useTranslation();
-    const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+    const [activeItem, setActiveItem] = useState<string | null>(null);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    useEffect(() => {
+        const checkScreenSize = () => {
+            const mobile = window.innerWidth < 1065;
+            setIsMobile(mobile);
+            if (!mobile) {
+                setActiveItem(null);
+                setIsMenuOpen(false);
+            }
+        };
+        checkScreenSize();
+        window.addEventListener('resize', checkScreenSize);
+        return () => window.removeEventListener('resize', checkScreenSize);
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -50,6 +66,33 @@ export default function Header() {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+    const handleMouseEnter = (title: string) => {
+        if (!isMobile) {
+            setActiveItem(title);
+        }
+    };
+
+    const handleMouseLeave = () => {
+        if (!isMobile) {
+            setActiveItem(null);
+        }
+    };
+
+    const handleClick = (e: React.MouseEvent, title: string) => {
+        if (isMobile) {
+            e.preventDefault();
+            setActiveItem(prev => (prev === title ? null : title));
+        }
+    };
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    }
+
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+    };
 
     const naveLinks = [
         {
@@ -107,46 +150,75 @@ export default function Header() {
 
         <header 
             className={`
-                w-full py-5 common-p-inline flex items-center justify-between 
-                fixed top-0 start-0 z-50 duration-300
-                ${isScrolled ? 'bg-[var(--sugar-color)] shadow-lg' : 'bg-transparent'}
+                w-full py-5 common-p-inline flex items-center justify-between  flex-wrap
+                fixed top-0 start-0 z-50 duration-300 border-b border-[var(--mid-gray-color)]
+                ${isScrolled || isMenuOpen ? 'bg-[var(--light-gray-color)] shadow-lg' : 'bg-transparent'}
             `}
         >
 
             <Link to={ROUTES.HOME_ROUTE} className='h-16'>
-                <img src={isScrolled ? colorsLogo : whiteLogo} alt="logo" className='h-full' />
+                <img src={isScrolled || isMenuOpen ? colorsLogo : whiteLogo} alt="logo" className='h-full' />
             </Link>
 
-            <nav>
+            <nav 
+                onClick={closeMenu}
+                className={`
+                    max-[1065px]:fixed max-[1065px]:top-26 max-[1065px]:bottom-0 max-[1065px]:w-full scrollbar-hide duration-300
+                    max-[1065px]:bg-[var(--light-gray-color)] max-[1065px]:shadow-lg max-[1065px]:z-50 max-[1065px]:overflow-y-auto
+                    ${isMenuOpen 
+                        ? 'max-[1065px]:start-0 max-[1065px]:opacity-100' 
+                        : `${i18n.language === 'ar' ? 'max-[1065px]:start-[-100%]' : 'max-[1065px]:start-[100%]'} max-[1065px]:opacity-0`} 
+                    `}
+            >
 
-                <ul className='flex items-center gap-2.5'>
+                <ul 
+                    onClick={(e) => e.stopPropagation()}
+                    className='
+                        flex items-center gap-1 max-[1065px]:h-full max-[1065px]:w-full max-[1065px]:flex-col
+                        max-[1065px]:p-5 max-[1065px]:gap-5
+                    '
+                >
 
                     {naveLinks.map(link => (
 
                         link.list ? (
 
                             <li 
-                                className='relative group p-2.5 -m-2.5' key={link.id}
-                                onMouseEnter={() => setHoveredItem(link.title)}
-                                onMouseLeave={() => setHoveredItem(null)}
+                                className='
+                                    relative group py-5 max-[1065px]:py-0 max-[1065px]:w-full
+                                    max-[1065px]:gap-2.5 max-[1065px]:flex-col max-[1065px]:flex
+                                ' 
+                                key={link.id}
+                                onMouseEnter={() => handleMouseEnter(link.title)}
+                                onMouseLeave={handleMouseLeave}
                             >
 
                                 <Link 
                                     to={link.link}
+                                    onClick={(e) => handleClick(e, link.title)}
                                     className={`
                                         px-4 py-2 flex items-center gap-1 text-base font-medium 
-                                        rounded-md cursor-pointer duration-300 
-                                        ${hoveredItem === link.title 
-                                            ? 'bg-[var(--light-gray-color)] text-[var(--blue-color)]' 
-                                            : isScrolled ? 'text-[var(--dark-blue-color)]' : 'text-[var(--white-color)]'
+                                        rounded-md cursor-pointer duration-300 max-[1065px]:w-full
+                                        max-[1065px]:px-5 max-[1065px]:py-2.5 justify-between max-[1065px]:gap-2.5
+                                        ${activeItem === link.title 
+                                            ? (isScrolled || isMenuOpen
+                                                ? 'bg-[var(--mid-gray-color)] text-[var(--dark-blue-color)]' 
+                                                : 'bg-[var(--light-gray-color)] text-[var(--blue-color)]'
+                                            )
+                                            : (isScrolled || isMenuOpen
+                                                ? 'text-[var(--dark-blue-color)]' 
+                                                : 'text-[var(--white-color)]'
+                                            )
                                         }
+                                        max-[1065px]:bg-[var(--mid-gray-color)] max-[1065px]:text-[var(--dark-blue-color)]
                                     `}
                                 >
-                                    <link.icon size={18} />
+                                    <div className='flex items-center gap-1 max-[1065px]:gap-2.5'>
+                                        <link.icon size={18} />
+                                        <p>{link.title}</p>
+                                    </div>
 
-                                    <p>{link.title}</p>
-
-                                    <motion.div {...getChevronAnimation(hoveredItem === link.title, i18n.language)}>
+                                    <motion.div {...getChevronAnimation(activeItem === link.title, i18n.language)}>
                                         <ChevronRight size={18} className={`${i18n.language === 'ar' ? 'rotate-180' : ''}`} />
                                     </motion.div>
 
@@ -154,43 +226,78 @@ export default function Header() {
 
                                 <AnimatePresence>
 
-                                    {hoveredItem === link.title && (
+                                    {activeItem === link.title && (
 
                                         <motion.div 
                                             className='
                                                 absolute nav-btn-hover-top left-[50%] translate-x-[-50%] z-50 
-                                                w-auto min-w-max p-4 rounded-2xl bg-[var(--light-gray-color)] shadow-lg
-                                                border border-[var(--light-gray-color)] grid grid-cols-1 gap-2.5
+                                                w-auto min-w-max p-4 rounded-xl bg-[var(--light-gray-color)] shadow-lg
+                                                grid grid-cols-1 gap-2 border border-[var(--gray-color)] max-[1065px]:p-2.5
+                                                max-[1065px]:static max-[1065px]:left-0 max-[1065px]:translate-x-0 max-[1065px]:min-w-full
+                                                max-[1065px]:rounded-md max-[1065px]:shadow-none
                                             '
-                                            {...dropdownAnimations.container}
+                                            {...(isMobile ? dropdownAnimations.mobileContainer : dropdownAnimations.container)}
                                         >
 
-                                            {link.list.map(link => (
+                                            <div 
+                                                className="
+                                                    absolute -top-[9px] left-1/2 -translate-x-1/2 w-0 h-0 
+                                                    border-l-[9px] border-l-transparent 
+                                                    border-r-[9px] border-r-transparent 
+                                                    border-b-[9px] border-b-[var(--gray-color)]
+                                                    max-[1065px]:hidden
+                                                "
+                                            ></div>
 
-                                                <Link 
-                                                    key={link.id}
-                                                    to={link.link} 
-                                                    className='
-                                                        relative text-base px-4 py-2 rounded-md flex items-center gap-2.5 
-                                                        text-[var(--dark-blue-color)] font-semibold bg-[var(--mid-gray-color)]
-                                                        duration-300 hover:text-[var(--white-color)] hover:bg-[var(--blue-color)] group/new-link
-                                                    '
-                                                >
-                                                    <link.icon size={20} stroke='currentColor' className='transition-colors duration-300' />
-                                                    {link.title}
-                                                    {link.isNew && 
-                                                        <span 
-                                                            className={`
-                                                                absolute -top-1 -end-1 bg-[var(--blue-color)] text-[var(--white-color)] px-1 py-0.5 rounded-md text-[8px]
-                                                                shadow group-hover/new-link:bg-[var(--light-gray-color)] group-hover/new-link:text-[var(--blue-color)] duration-300
-                                                                ${i18n.language === 'ar' ? 'rotate-[-15deg]' : 'rotate-[15deg]'}
-                                                            `}
-                                                        >
-                                                            {t('header.new')}
-                                                        </span>
-                                                    }
-                                                </Link>
+                                            <div 
+                                                className="
+                                                    absolute -top-2 left-1/2 -translate-x-1/2 w-0 h-0 
+                                                    border-l-8 border-l-transparent 
+                                                    border-r-8 border-r-transparent 
+                                                    border-b-8 border-b-[var(--light-gray-color)]
+                                                    max-[1065px]:hidden
+                                                "
+                                            ></div>
 
+                                            {link.list.map((link, idx) => (
+                                                <React.Fragment key={link.id}>
+                                                    {idx > 0 && (
+                                                        <div className="w-full border-b border-[var(--gray-color)]" />
+                                                    )}
+                                                    <Link 
+                                                        to={link.link} 
+                                                        onClick={closeMenu}
+                                                        className={`
+                                                            relative text-base px-4 py-2 rounded-md flex items-center justify-between gap-2.5 
+                                                            text-[var(--dark-blue-color)] font-medium
+                                                            transition-colors duration-300 hover:text-[var(--white-color)] group/new-link
+                                                            before:content-[""] before:absolute before:inset-0 before:z-[-1] before:rounded-md
+                                                            before:bg-gradient-to-r max-[1065px]:text-sm
+                                                            before:opacity-0 hover:before:opacity-100
+                                                            before:transition-opacity before:duration-300
+                                                            ${i18n.language === 'ar' 
+                                                                ? 'before:from-[var(--light-blue-color)] before:to-[var(--blue-color)]' 
+                                                                : 'before:from-[var(--blue-color)] before:to-[var(--light-blue-color)]'
+                                                            }
+                                                        `}
+                                                    >
+                                                        <div className='flex items-center gap-1 max-[1065px]:gap-2.5'>
+                                                            <link.icon size={20} stroke='currentColor' className='transition-colors duration-300 flex-shrink-0' />
+                                                            <span>{t(link.title)}</span>
+                                                        </div>
+                                                        {link.isNew && 
+                                                            <span 
+                                                                className={`
+                                                                    bg-[var(--blue-color)] text-[var(--white-color)] px-1 py-0.5 rounded-md text-[8px]
+                                                                    shadow group-hover/new-link:bg-[var(--sugar-color)] 
+                                                                    group-hover/new-link:text-[var(--blue-color)] duration-300
+                                                                `}
+                                                            >
+                                                                {t('header.new')}
+                                                            </span>
+                                                        }
+                                                    </Link>
+                                                </React.Fragment>
                                             ))}
 
                                         </motion.div>
@@ -203,15 +310,20 @@ export default function Header() {
 
                         ) : (
 
-                            <li key={link.id}>
+                            <li className='py-5 max-[1065px]:py-0 max-[1065px]:w-full' key={link.id}>
 
                                 <Link 
                                     to={link.link}
+                                    onClick={closeMenu}
                                         className={`
                                         px-4 py-2 flex items-center gap-1 text-base font-medium 
-                                        rounded-md cursor-pointer duration-300 
-                                        ${isScrolled ? 'text-[var(--dark-blue-color)]' : 'text-[var(--white-color)]'}
-                                        hover:bg-[var(--light-gray-color)] hover:text-[var(--blue-color)]
+                                        rounded-md cursor-pointer duration-300 max-[1065px]:w-full
+                                        max-[1065px]:px-5 max-[1065px]:py-2.5 justify-start max-[1065px]:gap-2.5
+                                        max-[1065px]:bg-[var(--mid-gray-color)] max-[1065px]:text-[var(--dark-blue-color)]
+                                        ${isScrolled 
+                                            ? 'text-[var(--dark-blue-color)] hover:bg-[var(--mid-gray-color)]' 
+                                            : 'text-[var(--white-color)] hover:bg-[var(--light-gray-color)] hover:text-[var(--blue-color)]'
+                                        }
                                     `}
                                 >
                                     <link.icon size={18} />
@@ -224,13 +336,53 @@ export default function Header() {
 
                     ))}
 
+                    {isMobile && <li 
+                        className='
+                            relative group py-5 max-[1065px]:py-0 max-[1065px]:w-full
+                            max-[1065px]:gap-2.5 max-[1065px]:flex-col max-[1065px]:flex
+                        '
+                    >
+                        <TranslateBtn isMobile={isMobile} onClose={closeMenu} className='w-full bg-[var(--mid-gray-color)] px-5 py-2.5 shadow-none' />
+                    </li>}
+
                 </ul>
 
             </nav>
 
-            <div className='flex items-center gap-2.5'>
+            <div className='flex items-center gap-2.5 max-[1065px]:hidden'>
                 <TranslateBtn />
             </div>
+
+            {isMobile && (
+                <button
+                    onClick={toggleMenu}
+                    className="flex flex-col items-center justify-center gap-1.5 p-2 z-50"
+                    aria-label="Toggle menu"
+                >
+                    <span
+                        className={`
+                            w-8 h-1 rounded-full transition-all duration-300
+                            ${isMenuOpen 
+                                ? 'rotate-45 translate-y-[10px] bg-[var(--dark-blue-color)]' : (isScrolled ? 'bg-[var(--dark-blue-color)]' 
+                                : 'bg-[var(--white-color)]'
+                            )}
+                        `}
+                    />
+                    <span
+                        className={`
+                            w-8 h-1 rounded-full transition-all duration-300
+                            ${isMenuOpen ? 'opacity-0' : 'opacity-100'}
+                            ${isScrolled ? 'bg-[var(--dark-blue-color)]' : 'bg-[var(--white-color)]'}
+                        `}
+                    />
+                    <span
+                        className={`
+                            w-8 h-1 rounded-full transition-all duration-300
+                            ${isMenuOpen ? '-rotate-45 -translate-y-[10px] bg-[var(--dark-blue-color)]' : (isScrolled ? 'bg-[var(--dark-blue-color)]' : 'bg-[var(--white-color)]')}
+                        `}
+                    />
+                </button>
+            )}
 
         </header>
 

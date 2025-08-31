@@ -11,12 +11,12 @@
     --dark-blue-color: #184C57;
     /* ====== custom-colors ====== */
     --mid-gray-color: rgba(128, 128, 128, 0.08);
-    --dark-blue-opacity-color: rgba(24, 76, 87, 0.85);
+    --dark-blue-opacity-color: rgba(24, 76, 87, 0.9);
 }
 
 body {
     overflow-x: hidden;
-    background-color: var(--sugar-color);
+    background-color: var(--light-gray-color);
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -39,4 +39,5 @@ body {
 
 .nav-btn-hover-top {
     top: 100%;
+    /* top: calc(100% - 10px); */
 }

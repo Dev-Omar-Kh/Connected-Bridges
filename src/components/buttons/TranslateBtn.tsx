@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import Flag from 'react-world-flags'
 
 
-export default function TranslateBtn() {
+export default function TranslateBtn({isMobile, className, onClose}: {isMobile?: boolean, className?: string, onClose?: () => void}) {
 
     const [isOpen, setIsOpen] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
@@ -19,6 +19,7 @@ export default function TranslateBtn() {
     const changeLanguage = (lng: string) => {
         i18n.changeLanguage(lng);
         setIsOpen(false);
+        if (onClose) onClose();
     };
 
     useEffect(() => {
@@ -43,13 +44,20 @@ export default function TranslateBtn() {
 
     return <React.Fragment>
 
-        <div className='relative' ref={menuRef}>
+        <div className='relative max-[1065px]:flex max-[1065px]:flex-col gap-2.5' ref={menuRef}>
 
             <button
-                className='p-2 rounded-md bg-[var(--light-gray-color)] shadow-md text-[var(--dark-blue-color)] flex items-center gap-1 cursor-pointer mb-2.5'
+                className={`
+                    p-2 rounded-md bg-[var(--light-gray-color)] shadow-md text-[var(--dark-blue-color)] 
+                    flex items-center justify-between gap-1 cursor-pointer ${className}
+                `}
                 onClick={toggleOpen}
             >
-                <Languages size={20} color='var(--blue-color)' />
+                <div className='flex items-center gap-1 text-base font-medium '>
+                    <Languages size={20} color='var(--dark-blue-color)' />
+                    {isMobile && <p>{t('header.language')}</p>}
+                </div>
+
                 <motion.div {...getChevronAnimation(isOpen, i18n.language)}>
                     <ChevronRight size={18} color='var(--blue-color)' className={`${i18n.language === 'ar' ? 'rotate-180' : ''}`} />
                 </motion.div>
@@ -58,7 +66,11 @@ export default function TranslateBtn() {
             <AnimatePresence>
 
                 {isOpen && <motion.ul
-                    className='absolute nav-btn-hover-top end-0 w-auto min-w-max bg-[var(--light-gray-color)] rounded-md shadow-md overflow-hidden'
+                    className='
+                        absolute nav-btn-hover-top mt-2.5 max-[1065px]:mt-0 end-0 w-auto max-[1065px]:min-w-[100%] mb-5
+                        min-w-max bg-[var(--light-gray-color)] rounded-md shadow-md overflow-hidden
+                        max-[1065px]:static max-[1065px]:left-0 max-[1065px]:translate-x-0
+                    '
                     {...dropdownAnimations.container}
                 >
 

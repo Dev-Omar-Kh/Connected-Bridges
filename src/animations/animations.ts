@@ -1,4 +1,4 @@
-import { easeInOut, easeOut } from 'framer-motion';
+import { easeInOut } from 'framer-motion';
 
 // Dropdown animations
 export const dropdownAnimations = {
@@ -23,8 +23,27 @@ export const dropdownAnimations = {
             visibility: 'hidden',
         },
         transition: { 
-            duration: 0.2, 
-            ease: easeOut,
+            duration: 0.3, 
+            ease: easeInOut,
+        }
+    },
+
+    mobileContainer: {
+        initial: {
+            opacity: 0,
+            height: 0,
+        },
+        animate: {
+            opacity: 1,
+            height: 'auto',
+        },
+        exit: {
+            opacity: 0,
+            height: 0,
+        },
+        transition: { 
+            duration: 0.4, 
+            ease: easeInOut,
         }
     },
 
