@@ -21,8 +21,10 @@
         "language": "Language"
     },
     "hero": {
-        "title": "Redefining The Future",
-        "subtitle": "Global leadership in sustainable development and innovation."
+        "title": "Bridging Reality through Design, Technology & Security",
+        "description": "A Saudi company providing integrated design and construction solutions, powered by security technologies and artificial intelligence. We work with government entities and the private sector — from design to execution and operation — to deliver reliable, high-quality projects.",
+        "consultation": "Get a Consultation",
+        "projects": "Our Projects"
     },
     "footer": {
         "title": "Footer"
