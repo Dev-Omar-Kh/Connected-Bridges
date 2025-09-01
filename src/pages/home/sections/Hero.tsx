@@ -17,7 +17,7 @@ export default function Hero() {
         <section 
             className={`
                 relative w-full h-[100dvh] bg-[var(--light-blue-color)] overflow-hidden
-                ${i18n.language === 'en' ? 'max-[515px]:h-[120dvh]' : ''}
+                ${i18n.language === 'en' ? 'max-[515px]:h-[110dvh]' : ''}
             `}
         >
 

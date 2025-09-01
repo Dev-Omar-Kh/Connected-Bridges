@@ -259,13 +259,13 @@ export default function Header() {
                                                 "
                                             ></div>
 
-                                            {link.list.map((link, idx) => (
-                                                <React.Fragment key={link.id}>
+                                            {link.list.map((subLink, idx) => (
+                                                <React.Fragment key={subLink.id}>
                                                     {idx > 0 && (
                                                         <div className="w-full border-b border-[var(--gray-color)]" />
                                                     )}
                                                     <Link 
-                                                        to={link.link} 
+                                                        to={subLink.link} 
                                                         onClick={closeMenu}
                                                         className={`
                                                             relative text-base px-4 py-2 rounded-md flex items-center justify-between gap-2.5 
@@ -282,10 +282,10 @@ export default function Header() {
                                                         `}
                                                     >
                                                         <div className='flex items-center gap-1 max-[1065px]:gap-2.5'>
-                                                            <link.icon size={20} stroke='currentColor' className='transition-colors duration-300 flex-shrink-0' />
-                                                            <span>{t(link.title)}</span>
+                                                            <subLink.icon size={20} stroke='currentColor' className='transition-colors duration-300 flex-shrink-0' />
+                                                            <span>{t(subLink.title)}</span>
                                                         </div>
-                                                        {link.isNew && 
+                                                        {subLink.isNew && 
                                                             <span 
                                                                 className={`
                                                                     bg-[var(--blue-color)] text-[var(--white-color)] px-1 py-0.5 rounded-md text-[8px]

@@ -24,7 +24,7 @@ body {
 
 ::-webkit-scrollbar {
     width: 5px;
-    background-color: var(--sugar-color);
+    background-color: var(--light-gray-color);
 }
 
 ::-webkit-scrollbar-thumb {

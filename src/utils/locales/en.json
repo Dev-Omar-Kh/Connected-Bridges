@@ -27,6 +27,24 @@
         "projects": "Our Projects"
     },
     "footer": {
-        "title": "Footer"
+        "title": "Footer",
+        "description": "Saudi company offering integrated design & construction solutions, enhanced with AI and security technologies — serving government and private sector.",
+        "office": {
+            "title": " Our Office",
+            "address": "Office9, 1321, King Abdulaziz St. Riyadh, KSA"
+        },
+        "links": {
+            "title": "Quick Links",
+            "home": "Home",
+            "services": "Services",
+            "about_us": "About Us",
+            "projects": "Projects",
+            "insights": "Insights"
+        },
+        "copyright": "All rights reserved",
+        "newsletter": {
+            "title": "Subscribe to Our Newsletter",
+            "placeholder": "Enter your email"
+        }
     }
 }
