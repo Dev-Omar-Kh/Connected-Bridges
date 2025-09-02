@@ -36,7 +36,7 @@ body {
 }
 
 .common-p-block {
-    padding-inline: 50px;
+    padding-block: 50px;
 }
 
 .nav-btn-hover-top {
@@ -68,4 +68,10 @@ body {
 .glowing-button-animation {
     animation: glowing-button-pulse 3s infinite ease-in-out;
     -webkit-animation: glowing-button-pulse 3s infinite ease-in-out;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

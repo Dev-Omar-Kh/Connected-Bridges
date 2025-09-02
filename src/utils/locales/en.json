@@ -26,6 +26,25 @@
         "consultation": "Get a Consultation",
         "projects": "Our Projects"
     },
+    "overview": {
+        "clients": {
+            "title": "Our Prominent Clients"
+        },
+        "achievements": {
+            "title": "Our Achievements",
+            "cards": {
+                "years": {
+                    "title": "Years of Experience"
+                },
+                "projects": {
+                    "title": "Projects Completed"
+                },
+                "sectors": {
+                    "title": "Industry Sectors"
+                }
+            }
+        }
+    },
     "footer": {
         "title": "Footer",
         "description": "Saudi company offering integrated design & construction solutions, enhanced with AI and security technologies — serving government and private sector.",

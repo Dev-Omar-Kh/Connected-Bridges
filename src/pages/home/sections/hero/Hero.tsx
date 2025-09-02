@@ -1,11 +1,19 @@
 import { Headset, LayoutDashboard } from 'lucide-react';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 export default function Hero() {
 
     const { t, i18n } = useTranslation();
+    const [offsetY, setOffsetY] = useState(0);
+    const handleScroll = () => setOffsetY(window.pageYOffset);
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const ctaBtns = [
         {id: 1, label: t('hero.consultation'), href: '/', icon: Headset, variant: 'primary'},
@@ -24,7 +32,7 @@ export default function Hero() {
             <div 
                 className={`
                     absolute top-0 left-0 right-0 w-full h-full bg-[var(--dark-blue-opacity-color)] z-30 
-                    flex items-center justify-center flex-col gap-10 common-p-block
+                    flex items-center justify-center flex-col gap-10 common-p-block common-p-inline
                     ${i18n.language === 'en' ? 'max-[515px]:pt-20' : ''}
                 `}
             >
@@ -60,7 +68,18 @@ export default function Hero() {
                             `}
                         >
                                 <ctaBtn.icon size={24} />
-                                <p>{ctaBtn.label}</p>
+                                <p 
+                                    className={
+                                        ctaBtn.variant !== 'primary' 
+                                        ? `
+                                            ${i18n.language === 'ar' ? 'bg-gradient-to-r' : 'bg-gradient-to-l'} 
+                                            from-[var(--light-blue-color)] to-[var(--dark-blue-color)] bg-clip-text text-transparent
+                                        ` 
+                                        : ''
+                                    }
+                                >
+                                    {ctaBtn.label}
+                                </p>
                         </Link>
                     ))}
 
@@ -68,10 +87,13 @@ export default function Hero() {
 
             </div>
 
-            <video 
-                src="https://neom.scene7.com/is/content/neom/20250626_REDEFINING_16X9_4K_MASTER_V9_WEB-3" 
-                autoPlay muted loop className='w-full h-full object-cover scale-150' 
-            />
+            <div className="absolute inset-0 z-10">
+                <video 
+                    style={{ transform: `translateY(${offsetY * 0.5}px)` }}
+                    src="https://neom.scene7.com/is/content/neom/20250626_REDEFINING_16X9_4K_MASTER_V9_WEB-3" 
+                    autoPlay muted loop className='w-full h-full object-cover scale-150'
+                />
+            </div>
 
         </section>
 

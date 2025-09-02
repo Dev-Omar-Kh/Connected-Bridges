@@ -22,6 +22,7 @@ import {
 import { dropdownAnimations, getChevronAnimation } from '../../animations/animations';
 import { useTranslation } from 'react-i18next';
 import TranslateBtn from '../buttons/TranslateBtn';
+import { useMediaQuery } from '../../hooks/useMediaQuery';
 
 // ====== import images ====== //
 import whiteLogo from '../../assets/images/white-logo-size.png';
@@ -34,24 +35,19 @@ export default function Header() {
     const { t, i18n } = useTranslation();
     const [activeItem, setActiveItem] = useState<string | null>(null);
     const [isScrolled, setIsScrolled] = useState(false);
-    const [isMobile, setIsMobile] = useState(false);
+    const isMobile = useMediaQuery('(max-width: 1064px)');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
-        const checkScreenSize = () => {
-            const mobile = window.innerWidth < 1065;
-            setIsMobile(mobile);
-            if (!mobile) {
-                setActiveItem(null);
-                setIsMenuOpen(false);
-            }
-        };
-        checkScreenSize();
-        window.addEventListener('resize', checkScreenSize);
-        return () => window.removeEventListener('resize', checkScreenSize);
-    }, []);
+        // Close dropdowns and menu when switching to desktop view
+        if (!isMobile) {
+            setActiveItem(null);
+            setIsMenuOpen(false);
+        }
+    }, [isMobile]);
 
     useEffect(() => {
+
         const handleScroll = () => {
             if (window.scrollY > 50) {
                 setIsScrolled(true);
@@ -60,11 +56,14 @@ export default function Header() {
             }
         };
 
+        handleScroll();
+
         window.addEventListener('scroll', handleScroll);
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
+
     }, []);
 
     const handleMouseEnter = (title: string) => {
