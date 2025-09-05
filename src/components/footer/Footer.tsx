@@ -57,7 +57,12 @@ export default function Footer() {
 
     return <React.Fragment>
 
-        <footer className='bg-[var(--dark-blue-color)] mt-5 text-[var(--light-gray-color)] pt-24 pb-8 common-p-inline sm:px-6 lg:px-16'>
+        <footer 
+            className={`
+                text-[var(--light-gray-color)] pt-24 pb-8 common-p-inline sm:px-6 lg:px-16
+                ${i18n.language === 'ar' ? 'bg-gradient-to-l' : 'bg-gradient-to-r'} from-[var(--blue-color)] to-[var(--dark-blue-color)]
+            `}
+        >
 
             <div className='container mx-auto'>
 
@@ -120,8 +125,10 @@ export default function Footer() {
                                     type="email"
                                     placeholder={t('footer.newsletter.placeholder')}
                                     className='
-                                        w-full bg-transparent border-b border-gray focus:border-[var(--light-blue-color)] 
-                                        outline-none py-3 px-10 text-[var(--white-color)] transition-colors duration-300
+                                        w-full bg-transparent border-b-2 border-[var(--white-color-opacity)] 
+                                        focus:border-[var(--light-blue-color)] 
+                                        outline-none py-3 px-10 text-[var(--white-color)] 
+                                        transition-colors duration-300 placeholder:text-[var(--gray-color)]
                                     '
                                 />
                                 <button 

@@ -31,7 +31,7 @@
             "title": "Our Prominent Clients"
         },
         "achievements": {
-            "title": "Our Achievements",
+            "title": "Achievements",
             "cards": {
                 "years": {
                     "title": "Years of Experience"
@@ -43,6 +43,43 @@
                     "title": "Industry Sectors"
                 }
             }
+        },
+        "about-us": {
+            "title": "About Us",
+            "about": "About",
+            "about-title": "Connected Bridges",
+            "description": "A Saudi company providing integrated solutions from design and construction to technology and security. We started with interior design, connected bridges, furniture, and modular construction, and expanded to deliver AI solutions, advanced security, and digital transformation across sectors — serving as a bridge between today’s needs and",
+            "cards": {
+                "securityTitle": "Security First",
+                "securityDescription": "Comprehensive security solutions integrated into every project",
+                "aiTitle": "AI-Powered",
+                "aiDescription": "Leveraging artificial intelligence for smarter solutions",
+                "standardsTitle": "Global Standards",
+                "standardsDescription": "International quality standards with local expertise",
+                "designAndBuildTitle": "Design & Build",
+                "designAndBuildDescription": "Interior design, furniture, and standard building solutions"
+            }
+        },
+        "services": {
+            "title": "Services",
+            "design_build_solutions": "Design & Build Solutions",
+            "design_build_solutions_description": "End-to-end design and build services, including interior design, furnishing, general contracting, and custom modular solutions for diverse project needs.",
+            "ai_surveillance_systems": "AI Surveillance Systems",
+            "ai_surveillance_systems_description": "Advanced AI surveillance for land and sea, integrating long-range radar, thermal cameras, and UAVs for superior situational awareness and rapid response.",
+            "command_control_centers": "Command & Control Centers",
+            "command_control_centers_description": "Designing and implementing unified command centers with integrated CCTV, access control, and IoT for streamlined emergency management.",
+            "smart_security_systems": "Smart Security Systems",
+            "smart_security_systems_description": "Intelligent security systems using AI video analytics, facial recognition, and unified 3D/PSIM platforms for enhanced detection and response.",
+            "emergency_critical_communications": "Emergency & Critical Communications",
+            "emergency_critical_communications_description": "Establishing and operating multi-agency 911 centers with seamless communication integration and expert training for effective critical incident response.",
+            "security_consulting_operations": "Security Consulting & Operations",
+            "security_consulting_operations_description": "Comprehensive security consulting, from policy development and project management to specialized training, ensuring full operational readiness.",
+            "ai_cross_sector_applications": "AI Cross-Sector Applications",
+            "ai_cross_sector_applications_description": "Developing cross-sector AI solutions for smart cities, industry, and healthcare using predictive analytics and automation to boost efficiency and safety.",
+            "ai_services": "AI Services",
+            "ai_services_description": "Specialized AI services including readiness assessments, digital transformation strategy, and innovative solution design, plus training to build national capabilities.",
+            "feature_oriented_solutions": "Future-Oriented Solutions",
+            "feature_oriented_solutions_description": "Pioneering next-gen solutions with AR/VR for training, Metaverse for virtual command centers, and smart glasses for interactive security management."
         }
     },
     "footer": {
@@ -65,5 +102,10 @@
             "title": "Subscribe to Our Newsletter",
             "placeholder": "Enter your email"
         }
+    },
+    "error_page": {
+        "title": "404",
+        "message": "Oops! The page you're looking for doesn't exist.",
+        "go_home": "Go to Homepage"
     }
 }

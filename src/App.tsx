@@ -3,6 +3,7 @@ import { createHashRouter, RouterProvider } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import Home from './pages/home/Home';
 import { useTranslation } from 'react-i18next';
+import Error from './pages/error/Error';
 
 const routes = createHashRouter([
 
@@ -10,7 +11,7 @@ const routes = createHashRouter([
         {index: true, element: <Home />},
     ]},
 
-    {path: '*', element: <h1>Error 404</h1>}
+    {path: '*', element: <Error />}
 
 ]);
 

@@ -2,8 +2,10 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { FaAward, FaRegBuilding } from "react-icons/fa";
 import { GoProject } from "react-icons/go";
+import MainTitle from "../../../../components/titles/MainTitle";
 
 export default function Achievements() {
+
     const { t, i18n } = useTranslation();
 
     const achievementsData = [
@@ -28,19 +30,20 @@ export default function Achievements() {
 
     ];
 
-    return (
-        <React.Fragment>
+    return <React.Fragment>
 
-        <div className="mx-auto text-center w-full flex flex-col gap-7.5">
+        <section className="mx-auto text-center w-full flex flex-col gap-7.5">
 
-            <h2 
+            {/* <h2 
                 className={`
                     text-4xl font-bold ${i18n.language === 'ar' ? 'bg-gradient-to-r' : 'bg-gradient-to-l'} pb-2.5
                     from-[var(--light-blue-color)] to-[var(--dark-blue-color)] bg-clip-text text-transparent max-[515px]:text-2xl
                 `}
             >
                 {t('overview.achievements.title')}
-            </h2>
+            </h2> */}
+
+            <MainTitle title='overview.achievements.title' />
 
             <div
                 className={`
@@ -64,8 +67,8 @@ export default function Achievements() {
                 ))}
             </div>
 
-        </div>
+        </section>
 
-        </React.Fragment>
-    );
+    </React.Fragment>
+
 }

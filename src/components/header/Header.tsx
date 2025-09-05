@@ -27,6 +27,7 @@ import { useMediaQuery } from '../../hooks/useMediaQuery';
 // ====== import images ====== //
 import whiteLogo from '../../assets/images/white-logo-size.png';
 import colorsLogo from '../../assets/images/light-bg-logo.png';
+import { NavLink } from 'react-router-dom';
 
 // ====== static-data ====== //
 
@@ -106,9 +107,24 @@ export default function Header() {
             title: t('header.about'),
             link: ROUTES.ABOUT_ROUTE,
             list: [
-                { id: 1, icon: BadgeInfo, title: t('header.about_us'), link: ROUTES.ABOUT_ROUTE },
-                { id: 2, icon: Handshake, title: t('header.our_partners'), link: ROUTES.ABOUT_ROUTE },
-                { id: 3, icon: Users, title: t('header.our_clients'), link: ROUTES.ABOUT_ROUTE },
+                { 
+                    id: 1, 
+                    icon: BadgeInfo, 
+                    title: t('header.about_us'), 
+                    link: `${ROUTES.ABOUT_ROUTE}/about-us` 
+                },
+                { 
+                    id: 2, 
+                    icon: Handshake, 
+                    title: t('header.our_partners'), 
+                    link: `${ROUTES.ABOUT_ROUTE}/our-partners` 
+                },
+                { 
+                    id: 3, 
+                    icon: Users, 
+                    title: t('header.our_clients'), 
+                    link: `${ROUTES.ABOUT_ROUTE}/our-clients` 
+                },
             ],
         },
         {
@@ -117,12 +133,44 @@ export default function Header() {
             title: t('header.services'),
             link: ROUTES.SERVICES_ROUTE,
             list: [
-                { id: 1, icon: DraftingCompass, title: t('header.design_build_solutions'), link: ROUTES.HOME_ROUTE },
-                { id: 2, isNew: true, icon: BrainCircuit, title: t('header.ai_surveillance_systems'), link: ROUTES.HOME_ROUTE },
-                { id: 3, icon: MonitorCog, title: t('header.command_control_centers'), link: ROUTES.HOME_ROUTE },
-                { id: 4, icon: GlobeLock, title: t('header.smart_security_systems'), link: ROUTES.HOME_ROUTE },
-                { id: 5, icon: Bell, title: t('header.emergency_critical_communications'), link: ROUTES.HOME_ROUTE },
-                { id: 6, isNew: true, icon: ShieldCheck, title: t('header.security_consulting_operations'), link: ROUTES.HOME_ROUTE },
+                { 
+                    id: 1, 
+                    icon: DraftingCompass, 
+                    title: t('header.design_build_solutions'), 
+                    link: `${ROUTES.SERVICES_ROUTE}/${t('header.design_build_solutions').toLowerCase().replace(/ /g, '-')}/1` 
+                },
+                { 
+                    id: 2, 
+                    isNew: true, 
+                    icon: BrainCircuit, 
+                    title: t('header.ai_surveillance_systems'), 
+                    link: `${ROUTES.SERVICES_ROUTE}/${t('header.ai_surveillance_systems').toLowerCase().replace(/ /g, '-')}/2` 
+                },
+                { 
+                    id: 3, 
+                    icon: MonitorCog, 
+                    title: t('header.command_control_centers'), 
+                    link: `${ROUTES.SERVICES_ROUTE}/${t('header.command_control_centers').toLowerCase().replace(/ /g, '-')}/3` 
+                },
+                { 
+                    id: 4, 
+                    icon: GlobeLock, 
+                    title: t('header.smart_security_systems'), 
+                    link: `${ROUTES.SERVICES_ROUTE}/${t('header.smart_security_systems').toLowerCase().replace(/ /g, '-')}/4` 
+                },
+                { 
+                    id: 5, 
+                    icon: Bell, 
+                    title: t('header.emergency_critical_communications'), 
+                    link: `${ROUTES.SERVICES_ROUTE}/${t('header.emergency_critical_communications').toLowerCase().replace(/ /g, '-')}/5` 
+                },
+                { 
+                    id: 6, 
+                    isNew: true, 
+                    icon: ShieldCheck, 
+                    title: t('header.security_consulting_operations'), 
+                    link: `${ROUTES.SERVICES_ROUTE}/${t('header.security_consulting_operations').toLowerCase().replace(/ /g, '-')}/6` 
+                },
             ],
         },
         {
@@ -192,14 +240,14 @@ export default function Header() {
                                 onMouseLeave={handleMouseLeave}
                             >
 
-                                <Link 
+                                <NavLink 
                                     to={link.link}
                                     onClick={(e) => handleClick(e, link.title)}
-                                    className={`
+                                    className={({ isActive }) => `
                                         px-4 py-2 flex items-center gap-1 text-base font-medium 
                                         rounded-md cursor-pointer duration-300 max-[1065px]:w-full
                                         max-[1065px]:px-5 max-[1065px]:py-2.5 justify-between max-[1065px]:gap-2.5
-                                        ${activeItem === link.title 
+                                        ${(activeItem === link.title || isActive)
                                             ? (isScrolled || isMenuOpen
                                                 ? 'bg-[var(--mid-gray-color)] text-[var(--dark-blue-color)]' 
                                                 : 'bg-[var(--light-gray-color)] text-[var(--blue-color)]'
@@ -221,7 +269,7 @@ export default function Header() {
                                         <ChevronRight size={18} className={`${i18n.language === 'ar' ? 'rotate-180' : ''}`} />
                                     </motion.div>
 
-                                </Link>
+                                </NavLink>
 
                                 <AnimatePresence>
 
@@ -263,20 +311,27 @@ export default function Header() {
                                                     {idx > 0 && (
                                                         <div className="w-full border-b border-[var(--gray-color)]" />
                                                     )}
-                                                    <Link 
+                                                    <NavLink 
                                                         to={subLink.link} 
-                                                        onClick={closeMenu}
-                                                        className={`
+                                                        onClick={() => {
+                                                            closeMenu();
+                                                            setActiveItem(null);
+                                                        }}
+                                                        className={({ isActive }) => `
                                                             relative text-base px-4 py-2 rounded-md flex items-center justify-between gap-2.5 
-                                                            text-[var(--dark-blue-color)] font-medium
-                                                            transition-colors duration-300 hover:text-[var(--white-color)] group/new-link
+                                                            font-medium
+                                                            transition-colors duration-300 group/new-link
                                                             before:content-[""] before:absolute before:inset-0 before:z-[-1] before:rounded-md
                                                             before:bg-gradient-to-r max-[1065px]:text-sm
-                                                            before:opacity-0 hover:before:opacity-100
                                                             before:transition-opacity before:duration-300
+                                                            hover:text-[var(--white-color)] hover:before:opacity-100
                                                             ${i18n.language === 'ar' 
                                                                 ? 'before:from-[var(--light-blue-color)] before:to-[var(--blue-color)]' 
                                                                 : 'before:from-[var(--blue-color)] before:to-[var(--light-blue-color)]'
+                                                            }
+                                                            ${isActive
+                                                                ? 'text-[var(--white-color)] before:opacity-100'
+                                                                : 'text-[var(--dark-blue-color)] before:opacity-0'
                                                             }
                                                         `}
                                                     >
@@ -295,7 +350,7 @@ export default function Header() {
                                                                 {t('header.new')}
                                                             </span>
                                                         }
-                                                    </Link>
+                                                    </NavLink>
                                                 </React.Fragment>
                                             ))}
 
@@ -311,23 +366,28 @@ export default function Header() {
 
                             <li className='py-5 max-[1065px]:py-0 max-[1065px]:w-full' key={link.id}>
 
-                                <Link 
+                                <NavLink 
                                     to={link.link}
+                                    end={link.link === ROUTES.HOME_ROUTE}
                                     onClick={closeMenu}
-                                        className={`
+                                        className={({ isActive }) => `
                                         px-4 py-2 flex items-center gap-1 text-base font-medium 
                                         rounded-md cursor-pointer duration-300 max-[1065px]:w-full
                                         max-[1065px]:px-5 max-[1065px]:py-2.5 justify-start max-[1065px]:gap-2.5
                                         max-[1065px]:bg-[var(--mid-gray-color)] max-[1065px]:text-[var(--dark-blue-color)]
-                                        ${isScrolled 
-                                            ? 'text-[var(--dark-blue-color)] hover:bg-[var(--mid-gray-color)]' 
-                                            : 'text-[var(--white-color)] hover:bg-[var(--light-gray-color)] hover:text-[var(--blue-color)]'
+                                        ${
+                                            isActive
+                                                ? (isScrolled ? 'bg-[var(--mid-gray-color)] text-[var(--dark-blue-color)]' : 'bg-[var(--light-gray-color)] text-[var(--blue-color)]')
+                                                : (isScrolled
+                                                    ? 'text-[var(--dark-blue-color)] hover:bg-[var(--mid-gray-color)]' 
+                                                    : 'text-[var(--white-color)] hover:bg-[var(--light-gray-color)] hover:text-[var(--blue-color)]'
+                                                )
                                         }
                                     `}
                                 >
                                     <link.icon size={18} />
                                     <p>{link.title}</p>
-                                </Link>
+                                </NavLink>
 
                             </li>
 

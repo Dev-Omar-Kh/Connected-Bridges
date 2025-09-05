@@ -36,7 +36,11 @@ body {
 }
 
 .common-p-block {
-    padding-block: 50px;
+    padding-block: 3.125rem;
+}
+
+.section-p-block {
+    padding-block: 15rem;
 }
 
 .nav-btn-hover-top {

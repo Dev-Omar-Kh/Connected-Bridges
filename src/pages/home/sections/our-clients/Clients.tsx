@@ -9,6 +9,8 @@ import { Autoplay } from 'swiper/modules';
 import { useTranslation } from 'react-i18next';
 import { clientsData, type ClientLogo } from '../../../../constants/clients';
 import { useMediaQuery } from '../../../../hooks/useMediaQuery';
+import MainTitle from '../../../../components/titles/MainTitle';
+import ClientCard from '../../../../components/cards/ClientCard';
 
 function chunkArray<T>(array: T[], size: number): T[][] {
     const chunkedArr: T[][] = [];
@@ -20,7 +22,7 @@ function chunkArray<T>(array: T[], size: number): T[][] {
 
 export default function Clients() {
 
-    const { t, i18n } = useTranslation();
+    const { i18n } = useTranslation();
     const isSmallPcScreen = useMediaQuery('(max-width: 1270px)');
     const isTabletScreen = useMediaQuery('(max-width: 840px)');
     const isMobileScreen = useMediaQuery('(max-width: 625px)');
@@ -46,25 +48,15 @@ export default function Clients() {
 
     return <React.Fragment>
 
-        <div className="mx-auto text-center common-p-inline w-full flex flex-col gap-7.5">
+        <section className="mx-auto text-center common-p-inline w-full flex flex-col gap-7.5">
 
-            <h2 
-                className={`
-                    text-4xl font-bold ${i18n.language === 'ar' ? 'bg-gradient-to-r' : 'bg-gradient-to-l'} pb-2.5
-                    from-[var(--light-blue-color)] to-[var(--dark-blue-color)] bg-clip-text text-transparent max-[515px]:text-2xl
-                `}
-            >
-                {t('overview.clients.title')}
-            </h2>
+            <MainTitle title='overview.clients.title' />
 
             <Swiper
                 dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}
                 key={`${i18n.language}-${isSmallPcScreen}`}
                 spaceBetween={30}
-                autoplay={{
-                    delay: 5000,
-                    disableOnInteraction: false,
-                }}
+                autoplay={{delay: 3000, disableOnInteraction: false}}
                 loop={true}
                 modules={[Autoplay]}
                 className="w-full"
@@ -76,29 +68,13 @@ export default function Clients() {
 
                             <div className="flex justify-center items-center gap-5 flex-wrap">
                                 {slideLogos.slice(0, rows).map((logo: ClientLogo) => (
-                                    <div 
-                                        key={logo.id} 
-                                        className="
-                                            h-44 w-44 p-4 flex items-center justify-center bg-[var(--white-color)]  rounded-xl overflow-hidden
-                                            shadow-md max-[410px]:h-32 max-[410px]:w-32 cursor-pointer
-                                        "
-                                    >
-                                        <img src={logo.src} alt={logo.alt} className="max-h-full max-w-full object-contain rounded-xl" />
-                                    </div>
+                                    <ClientCard key={logo.id} logo={logo} />
                                 ))}
                             </div>
 
                             <div className="flex justify-center items-center gap-5 flex-wrap">
                                 {slideLogos.slice(rows).map((logo: ClientLogo) => (
-                                    <div 
-                                        key={logo.id} 
-                                        className="
-                                            h-44 w-44 p-4 flex items-center justify-center bg-[var(--white-color)] rounded-xl overflow-hidden
-                                            shadow-md max-[410px]:h-32 max-[410px]:w-32 cursor-pointer
-                                        "
-                                    >
-                                        <img src={logo.src} alt={logo.alt} className="max-h-full max-w-full object-contain rounded-xl" />
-                                    </div>
+                                    <ClientCard key={logo.id} logo={logo} />
                                 ))}
                             </div>
                         </div>
@@ -107,7 +83,8 @@ export default function Clients() {
                 ))}
             </Swiper>
 
-        </div>
+        </section>
 
     </React.Fragment>
+
 }
