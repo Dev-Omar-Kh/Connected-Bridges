@@ -80,6 +80,14 @@
             "ai_services_description": "Specialized AI services including readiness assessments, digital transformation strategy, and innovative solution design, plus training to build national capabilities.",
             "feature_oriented_solutions": "Future-Oriented Solutions",
             "feature_oriented_solutions_description": "Pioneering next-gen solutions with AR/VR for training, Metaverse for virtual command centers, and smart glasses for interactive security management."
+        },
+        "last-projects": {
+            "title": "Last Projects",
+            "see-all-projects": "See All Projects"
+        },
+        "popular-insights": {
+            "title": "Popular Insights",
+            "see-all-insights": "See All Insights"
         }
     },
     "footer": {

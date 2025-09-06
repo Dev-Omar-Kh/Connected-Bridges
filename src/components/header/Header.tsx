@@ -409,7 +409,7 @@ export default function Header() {
             </nav>
 
             <div className='flex items-center gap-2.5 max-[1065px]:hidden'>
-                <TranslateBtn />
+                <TranslateBtn className={`${isScrolled ? 'bg-[var(--mid-gray-color)]' : ''} duration-300`} />
             </div>
 
             {isMobile && (

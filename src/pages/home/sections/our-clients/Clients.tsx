@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import { Autoplay } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import { useTranslation } from 'react-i18next';
 import { clientsData, type ClientLogo } from '../../../../constants/clients';
 import { useMediaQuery } from '../../../../hooks/useMediaQuery';
@@ -55,14 +55,15 @@ export default function Clients() {
             <Swiper
                 dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}
                 key={`${i18n.language}-${isSmallPcScreen}`}
+                pagination={{clickable: true}}
                 spaceBetween={30}
                 autoplay={{delay: 3000, disableOnInteraction: false}}
                 loop={true}
-                modules={[Autoplay]}
+                modules={[Autoplay, Pagination]}
                 className="w-full"
             >
                 {clientsChunks.map((slideLogos, slideIndex) => (
-                    <SwiperSlide key={`${slideIndex}-${slideLogos[0]?.id}`} className='w-full py-2.5'>
+                    <SwiperSlide key={`${slideIndex}-${slideLogos[0]?.id}`} className='w-full py-2.5 pb-12.5'>
 
                         <div className="flex flex-col items-center justify-center gap-5">
 

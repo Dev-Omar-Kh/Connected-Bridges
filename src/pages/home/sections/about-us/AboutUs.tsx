@@ -46,7 +46,7 @@ export default function AboutUs() {
 
                 <div className='flex flex-col gap-5'>
 
-                    <h3 className='flex flex-wrap items-center gap-0.5 text-3xl font-semibold max-[515px]:text-2xl'>
+                    <h3 className='flex flex-wrap items-center gap-x-1.5 text-3xl font-semibold max-[515px]:text-2xl'>
                         <span className='text-[var(--light-blue-color)]'>{t('overview.about-us.about')}</span>
                         <p className='text-[var(--dark-blue-color)]'>{t('overview.about-us.about-title')}</p>
                     </h3>

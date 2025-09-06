@@ -4,6 +4,8 @@ import Clients from './sections/our-clients/Clients'
 import Achievements from './sections/achievements/Achievements'
 import AboutUs from './sections/about-us/AboutUs'
 import Services from './sections/services/Services'
+import LastProjects from './sections/last-projects/LastProjects'
+import PopularInsights from './sections/popular-insights/PopularInsights'
 
 export default function Home() {
 
@@ -20,6 +22,10 @@ export default function Home() {
             <Achievements />
 
             <Services />
+
+            <LastProjects />
+
+            <PopularInsights />
 
         </section>
 
