@@ -1,9 +1,8 @@
 import React from 'react'
-import MainTitle from '../../../../components/titles/MainTitle'
 import { useTranslation } from 'react-i18next';
-import ServiceCard from '../../../../components/cards/ServiceCard';
+import ServiceCard from '../../components/cards/ServiceCard';
 import { Bell, BrainCircuit, DraftingCompass, GlobeLock, MonitorCog, ShieldCheck } from 'lucide-react';
-import { ROUTES } from '../../../../constants/routes';
+import { ROUTES } from '../../constants/routes';
 
 export default function Services() {
 
@@ -23,19 +22,13 @@ export default function Services() {
 
     return <React.Fragment>
 
-        <section className='common-p-inline mx-auto text-center w-full flex flex-col gap-7.5'>
-            
-            <MainTitle title={t('overview.services.title')} />
+        <div className='grid grid-cols-3 gap-5 max-[1075px]:grid-cols-2 max-[660px]:grid-cols-1'>
 
-            <div className='grid grid-cols-3 gap-5 max-[1075px]:grid-cols-2 max-[660px]:grid-cols-1'>
+            {services.map(({ id, title, icon: Icon, description }) => (
+                <ServiceCard key={id} id={id} title={title} icon={<Icon />} description={description} />
+            ))}
 
-                {services.map(({ id, title, icon: Icon, description }) => (
-                    <ServiceCard key={id} id={id} title={title} icon={<Icon />} description={description} />
-                ))}
-
-            </div>
-
-        </section>
+        </div>
 
     </React.Fragment>
 

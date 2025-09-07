@@ -89,6 +89,9 @@
         "popular-insights": {
             "title": "الرؤى الشائعة",
             "see-all-insights": "عرض جميع الرؤى"
+        },
+        "partners": {
+            "title": "شركاؤنا الاستراتيجيون"
         }
     },
     "footer": {

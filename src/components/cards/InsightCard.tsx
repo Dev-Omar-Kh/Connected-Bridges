@@ -42,7 +42,7 @@ export default function InsightCard() {
 
                 <div className='mt-auto pt-4 flex items-center justify-between gap-2.5 border-t border-t-[var(--mid-gray-color)]'>
 
-                    <InsightInfo icon={<User size={18} />} title='Sarah Mitchell' />
+                    <InsightInfo icon={<User size={18} />} title='Omar Khaled' />
 
                     <button 
                         className='

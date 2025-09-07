@@ -88,6 +88,9 @@
         "popular-insights": {
             "title": "Popular Insights",
             "see-all-insights": "See All Insights"
+        },
+        "partners": {
+            "title": "Partners"
         }
     },
     "footer": {

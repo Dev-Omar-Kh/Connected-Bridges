@@ -40,7 +40,6 @@ export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
-        // Close dropdowns and menu when switching to desktop view
         if (!isMobile) {
             setActiveItem(null);
             setIsMenuOpen(false);
@@ -409,7 +408,7 @@ export default function Header() {
             </nav>
 
             <div className='flex items-center gap-2.5 max-[1065px]:hidden'>
-                <TranslateBtn className={`${isScrolled ? 'bg-[var(--mid-gray-color)]' : ''} duration-300`} />
+                <TranslateBtn className={`${isScrolled ? 'bg-[var(--mid-gray-color)] shadow-none' : ''} duration-300`} />
             </div>
 
             {isMobile && (
