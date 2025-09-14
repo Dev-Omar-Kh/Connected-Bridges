@@ -60,7 +60,7 @@ export default function Footer() {
         <footer 
             className={`
                 text-[var(--light-gray-color)] pt-24 pb-8 common-p-inline sm:px-6 lg:px-16
-                ${i18n.language === 'ar' ? 'bg-gradient-to-l' : 'bg-gradient-to-r'} from-[var(--blue-color)] to-[var(--dark-blue-color)]
+                ${i18n.language === 'ar' ? 'bg-gradient-to-r' : 'bg-gradient-to-l'} from-[var(--blue-color)] to-[var(--dark-blue-color)]
             `}
         >
 

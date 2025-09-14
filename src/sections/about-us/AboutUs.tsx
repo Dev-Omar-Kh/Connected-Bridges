@@ -1,12 +1,16 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next';
-import { BsShieldLock } from 'react-icons/bs';
 import { RiRobot2Line } from 'react-icons/ri';
 import { TfiWorld } from 'react-icons/tfi';
 import AboutCard from '../../components/cards/AboutCard';
 import { PencilRuler } from 'lucide-react';
+import { GrSecure } from 'react-icons/gr';
 
-export default function AboutUs() {
+type AboutUsProps = {
+    fullData?: boolean;
+}
+
+export default function AboutUs({ fullData = false }: AboutUsProps) {
 
     const { t } = useTranslation();
 
@@ -15,7 +19,7 @@ export default function AboutUs() {
         {
             title: t('overview.about-us.cards.securityTitle'),
             description: t('overview.about-us.cards.securityDescription'),
-            icon: <BsShieldLock />
+            icon: <GrSecure />
         },
         {
             title: t('overview.about-us.cards.aiTitle'),
@@ -35,9 +39,11 @@ export default function AboutUs() {
 
     ];
 
+    console.log(fullData);
+
     return <React.Fragment>
 
-        <div className="grid grid-cols-2 gap-5 items-center max-[1077px]:grid-cols-2 max-[770px]:grid-cols-1">
+        <div className={`grid gap-5 items-center ${fullData ? 'grid-cols-1' : 'grid-cols-2 max-[1077px]:grid-cols-2 max-[770px]:grid-cols-1'}`}>
 
             <div className='flex flex-col gap-5'>
 
@@ -52,7 +58,12 @@ export default function AboutUs() {
 
             </div>
 
-            <div className='grid grid-cols-2 gap-5 max-[1077px]:grid-cols-1'>
+            <div 
+                className={`
+                    grid grid-cols-2 gap-5 max-[1077px]:grid-cols-1 
+                    ${fullData ? 'max-[1230px]:grid-cols-1 max-[930px]:grid-cols-2 max-[625px]:grid-cols-1' : ''}
+                `}
+            >
 
                 {aboutCards.map((card, index) => (
                     <AboutCard key={index} title={card.title} description={card.description} icon={card.icon} />

@@ -4,14 +4,21 @@ import MainLayout from './layouts/MainLayout';
 import Home from './pages/home/Home';
 import { useTranslation } from 'react-i18next';
 import Error from './pages/error/Error';
+import About from './pages/about/About';
+import { ROUTES } from './constants/routes';
+import OurClients from './pages/our-clients/OurClients';
+import OurPartners from './pages/our-partners/OurPartners';
 
 const routes = createHashRouter([
 
-    {path: '/', element: <MainLayout />, children: [
+    {path: ROUTES.HOME_ROUTE, element: <MainLayout />, children: [
         {index: true, element: <Home />},
+        {path: `/${ROUTES.ABOUT_ROUTE}/${ROUTES.ABOUT_US_ROUTE}`, element: <About />},
+        {path: `/${ROUTES.ABOUT_ROUTE}/${ROUTES.OUR_CLIENTS_ROUTE}`, element: <OurClients />},
+        {path: `/${ROUTES.ABOUT_ROUTE}/${ROUTES.OUR_PARTNERS_ROUTE}`, element: <OurPartners />},
     ]},
 
-    {path: '*', element: <Error />}
+    {path: ROUTES.NOT_FOUND_ROUTE, element: <Error />}
 
 ]);
 

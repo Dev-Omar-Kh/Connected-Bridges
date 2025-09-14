@@ -23,6 +23,7 @@ import { dropdownAnimations, getChevronAnimation } from '../../animations/animat
 import { useTranslation } from 'react-i18next';
 import TranslateBtn from '../buttons/TranslateBtn';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
+import type { TFunction } from 'i18next';
 
 // ====== import images ====== //
 import whiteLogo from '../../assets/images/white-logo-size.png';
@@ -30,6 +31,115 @@ import colorsLogo from '../../assets/images/light-bg-logo.png';
 import { NavLink } from 'react-router-dom';
 
 // ====== static-data ====== //
+
+const naveLinks = (t: TFunction) => {
+
+    return [
+        {
+            id: 1,
+            icon: House,
+            title: 'header.home',
+            link: ROUTES.HOME_ROUTE
+        },
+        {
+            id: 2,
+            icon: BadgeInfo,
+            title: 'header.about',
+            link: ROUTES.ABOUT_ROUTE,
+            list: [
+                { 
+                    id: 1, 
+                    icon: BadgeInfo, 
+                    title: 'header.about_us', 
+                    link: `${ROUTES.ABOUT_ROUTE}/${ROUTES.ABOUT_US_ROUTE}` 
+                },
+                { 
+                    id: 2, 
+                    icon: Handshake, 
+                    title: 'header.our_partners', 
+                    link: `${ROUTES.ABOUT_ROUTE}/our-partners` 
+                },
+                { 
+                    id: 3, 
+                    icon: Users, 
+                    title: 'header.our_clients', 
+                    link: `${ROUTES.ABOUT_ROUTE}/our-clients` 
+                },
+            ],
+        },
+        {
+            id: 3,
+            icon: PencilRuler,
+            title: 'header.services',
+            link: ROUTES.SERVICES_ROUTE,
+            list: [
+                { 
+                    id: 1, 
+                    icon: PencilRuler, 
+                    title: 'header.all_services', 
+                    link: `${ROUTES.SERVICES_ROUTE}/all-services` 
+                },
+                { 
+                    id: 2, 
+                    icon: DraftingCompass, 
+                    title: 'header.design_build_solutions', 
+                    link: `${ROUTES.SERVICES_ROUTE}/${t('header.design_build_solutions').toLowerCase().replace(/ /g, '-')}/1` 
+                },
+                { 
+                    id: 3, 
+                    isNew: true, 
+                    icon: BrainCircuit, 
+                    title: 'header.ai_surveillance_systems', 
+                    link: `${ROUTES.SERVICES_ROUTE}/${t('header.ai_surveillance_systems').toLowerCase().replace(/ /g, '-')}/2` 
+                },
+                { 
+                    id: 4, 
+                    icon: MonitorCog, 
+                    title: 'header.command_control_centers', 
+                    link: `${ROUTES.SERVICES_ROUTE}/${t('header.command_control_centers').toLowerCase().replace(/ /g, '-')}/3` 
+                },
+                { 
+                    id: 5, 
+                    icon: GlobeLock, 
+                    title: 'header.smart_security_systems', 
+                    link: `${ROUTES.SERVICES_ROUTE}/${t('header.smart_security_systems').toLowerCase().replace(/ /g, '-')}/4` 
+                },
+                { 
+                    id: 6, 
+                    icon: Bell, 
+                    title: 'header.emergency_critical_communications', 
+                    link: `${ROUTES.SERVICES_ROUTE}/${t('header.emergency_critical_communications').toLowerCase().replace(/ /g, '-')}/5` 
+                },
+                { 
+                    id: 7, 
+                    isNew: true, 
+                    icon: ShieldCheck, 
+                    title: 'header.security_consulting_operations', 
+                    link: `${ROUTES.SERVICES_ROUTE}/${t('header.security_consulting_operations').toLowerCase().replace(/ /g, '-')}/6` 
+                },
+            ],
+        },
+        {
+            id: 4,
+            icon: LayoutDashboard,
+            title: 'header.projects',
+            link: ROUTES.PROJECTS_ROUTE
+        },
+        {
+            id: 5,
+            icon: Newspaper,
+            title: 'header.insights',
+            link: ROUTES.INSIGHTS_ROUTE
+        },
+        {
+            id: 6,
+            icon: Headset,
+            title: 'header.contact',
+            link: ROUTES.CONTACT_ROUTE
+        },
+    ]
+
+};
 
 export default function Header() {
 
@@ -79,8 +189,8 @@ export default function Header() {
     };
 
     const handleClick = (e: React.MouseEvent, title: string) => {
+        e.preventDefault();
         if (isMobile) {
-            e.preventDefault();
             setActiveItem(prev => (prev === title ? null : title));
         }
     };
@@ -92,105 +202,6 @@ export default function Header() {
     const closeMenu = () => {
         setIsMenuOpen(false);
     };
-
-    const naveLinks = [
-        {
-            id: 1,
-            icon: House,
-            title: t('header.home'),
-            link: ROUTES.HOME_ROUTE
-        },
-        {
-            id: 2,
-            icon: BadgeInfo,
-            title: t('header.about'),
-            link: ROUTES.ABOUT_ROUTE,
-            list: [
-                { 
-                    id: 1, 
-                    icon: BadgeInfo, 
-                    title: t('header.about_us'), 
-                    link: `${ROUTES.ABOUT_ROUTE}/about-us` 
-                },
-                { 
-                    id: 2, 
-                    icon: Handshake, 
-                    title: t('header.our_partners'), 
-                    link: `${ROUTES.ABOUT_ROUTE}/our-partners` 
-                },
-                { 
-                    id: 3, 
-                    icon: Users, 
-                    title: t('header.our_clients'), 
-                    link: `${ROUTES.ABOUT_ROUTE}/our-clients` 
-                },
-            ],
-        },
-        {
-            id: 3,
-            icon: PencilRuler,
-            title: t('header.services'),
-            link: ROUTES.SERVICES_ROUTE,
-            list: [
-                { 
-                    id: 1, 
-                    icon: DraftingCompass, 
-                    title: t('header.design_build_solutions'), 
-                    link: `${ROUTES.SERVICES_ROUTE}/${t('header.design_build_solutions').toLowerCase().replace(/ /g, '-')}/1` 
-                },
-                { 
-                    id: 2, 
-                    isNew: true, 
-                    icon: BrainCircuit, 
-                    title: t('header.ai_surveillance_systems'), 
-                    link: `${ROUTES.SERVICES_ROUTE}/${t('header.ai_surveillance_systems').toLowerCase().replace(/ /g, '-')}/2` 
-                },
-                { 
-                    id: 3, 
-                    icon: MonitorCog, 
-                    title: t('header.command_control_centers'), 
-                    link: `${ROUTES.SERVICES_ROUTE}/${t('header.command_control_centers').toLowerCase().replace(/ /g, '-')}/3` 
-                },
-                { 
-                    id: 4, 
-                    icon: GlobeLock, 
-                    title: t('header.smart_security_systems'), 
-                    link: `${ROUTES.SERVICES_ROUTE}/${t('header.smart_security_systems').toLowerCase().replace(/ /g, '-')}/4` 
-                },
-                { 
-                    id: 5, 
-                    icon: Bell, 
-                    title: t('header.emergency_critical_communications'), 
-                    link: `${ROUTES.SERVICES_ROUTE}/${t('header.emergency_critical_communications').toLowerCase().replace(/ /g, '-')}/5` 
-                },
-                { 
-                    id: 6, 
-                    isNew: true, 
-                    icon: ShieldCheck, 
-                    title: t('header.security_consulting_operations'), 
-                    link: `${ROUTES.SERVICES_ROUTE}/${t('header.security_consulting_operations').toLowerCase().replace(/ /g, '-')}/6` 
-                },
-            ],
-        },
-        {
-            id: 4,
-            icon: LayoutDashboard,
-            title: t('header.projects'),
-            link: ROUTES.PROJECTS_ROUTE
-        },
-        {
-            id: 5,
-            icon: Newspaper,
-            title: t('header.insights'),
-            link: ROUTES.INSIGHTS_ROUTE
-        },
-        {
-            id: 6,
-            icon: Headset,
-            title: t('header.contact'),
-            link: ROUTES.CONTACT_ROUTE
-        },
-    ];
 
     return <React.Fragment>
 
@@ -225,7 +236,7 @@ export default function Header() {
                     '
                 >
 
-                    {naveLinks.map(link => (
+                    {naveLinks(t).map(link => (
 
                         link.list ? (
 
@@ -261,7 +272,7 @@ export default function Header() {
                                 >
                                     <div className='flex items-center gap-1 max-[1065px]:gap-2.5'>
                                         <link.icon size={18} />
-                                        <p>{link.title}</p>
+                                        <p>{t(link.title)}</p>
                                     </div>
 
                                     <motion.div {...getChevronAnimation(activeItem === link.title, i18n.language)}>
@@ -385,7 +396,7 @@ export default function Header() {
                                     `}
                                 >
                                     <link.icon size={18} />
-                                    <p>{link.title}</p>
+                                    <p>{t(link.title)}</p>
                                 </NavLink>
 
                             </li>

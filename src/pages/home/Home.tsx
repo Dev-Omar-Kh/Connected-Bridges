@@ -13,7 +13,7 @@ export default function Home() {
 
     return <React.Fragment>
 
-        <section className='flex flex-col gap-20 pb-20'>
+        <section className='space-y-20 pb-20'>
 
             <Hero />
 

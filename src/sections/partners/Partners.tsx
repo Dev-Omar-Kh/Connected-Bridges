@@ -16,7 +16,7 @@ export default function Partners() {
 
                 {clientsData.map(logo => (
                     <div key={logo.id} className='p-2.5'>
-                        <ClientCard logo={logo} />
+                        <ClientCard logo={logo} className='!h-48 !w-48' />
                     </div>
                 ))}
 

@@ -39,14 +39,14 @@ export default function Hero() {
 
                 <h1 
                     className='
-                        text-[var(--white-color)] w-full max-w-3xl text-center text-5xl font-bold 
-                        tracking-wider max-lg:text-4xl max-md:text-3xl max-sm:text-2xl glowing-text
+                        text-[var(--white-color)] w-3xl max-w-full text-center text-6xl font-bold
+                        max-[1025px]:text-5xl max-[670px]:text-4xl max-[505px]:text-3xl tracking-wider glowing-text
                     '
                 >
                     {t('hero.title')}
                 </h1>
 
-                <p className='text-[var(--white-color)] w-full max-w-4xl text-center text-lg max-md:text-base max-sm:text-sm'>
+                <p className='text-[var(--white-color)] w-4xl max-w-full text-center max-[505px]:text-sm'>
                     {t('hero.description')}
                 </p>
 

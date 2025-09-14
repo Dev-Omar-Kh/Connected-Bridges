@@ -6,6 +6,7 @@
         "our_partners": "Our Partners",
         "our_clients": "Our Clients",
         "services": "Services",
+        "all_services": "All Services",
         "design_build_solutions": "Design & Build Solutions",
         "ai_surveillance_systems": "AI Surveillance Systems",
         "command_control_centers": "Command & Control Centers",
@@ -58,6 +59,20 @@
                 "standardsDescription": "International quality standards with local expertise",
                 "designAndBuildTitle": "Design & Build",
                 "designAndBuildDescription": "Interior design, furniture, and standard building solutions"
+            },
+            "goals": {
+                "vision": {
+                    "title": "Vision",
+                    "description": "To be the leading bridge connecting innovative design, cutting-edge technology, and comprehensive security solutions in the Kingdom and beyond."
+                },
+                "mission": {
+                    "title": "Mission",
+                    "description": "We transform visionary concepts into tangible realities through integrated solutions that combine architectural excellence, technological innovation, and security expertise."
+                },
+                "values": {
+                    "title": "Values",
+                    "description": "Innovation, integrity, excellence, and partnership drive everything we do. We believe in creating lasting value for our clients and communities."
+                }
             }
         },
         "services": {
@@ -92,6 +107,15 @@
         "partners": {
             "title": "Partners"
         }
+    },
+    "about": {
+        "title": "About Us"
+    },
+    "our-clients": {
+        "title": "Our Clients"
+    },
+    "our-partners": {
+        "title": "Our Partners"
     },
     "footer": {
         "title": "Footer",
