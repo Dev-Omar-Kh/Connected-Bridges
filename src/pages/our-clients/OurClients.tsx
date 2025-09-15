@@ -7,9 +7,9 @@ export default function OurClients() {
 
     return <React.Fragment>
 
-        <section className='space-y-20 pb-20'>
+        <section className='space-y-10 pb-20'>
 
-            <PageTitle title={'our-clients.title'} />
+            <PageTitle title={'our-clients.title'} description={'our-clients.description'} />
 
             <div className='common-p-inline grid grid-cols-5 gap-5 max-[815px]:grid-cols-3 max-[510px]:grid-cols-2 max-[510px]:gap-2.5'>
 

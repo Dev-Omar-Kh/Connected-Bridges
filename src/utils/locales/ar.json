@@ -113,10 +113,125 @@
         "title": "من نحن"
     },
     "our-clients": {
-        "title": "عملاؤنا"
+        "title": "عملاؤنا",
+        "description": "عملاؤنا هم القاعدة الأساسية لشركتنا. نحن فخورون بالعمل مع بعض الشركات الأكثر شهرة في العالم."
     },
     "our-partners": {
-        "title": "شركاؤنا"
+        "title": "شركاؤنا",
+        "description": "شركاؤنا هم القاعدة الأساسية لشركتنا. نحن فخورون بالعمل مع بعض الشركات الأكثر شهرة في العالم."
+    },
+    "all-services": {
+        "title": "جميع الخدمات",
+        "description": "جميع الخدمات التي نقدمها هي متكاملة ومتخصصة في تلبية احتياجات العملاء.",
+        "services": {
+
+            "design_build_solutions": "حلول التصميم والبناء",
+            "design_build_solutions_description": "خدمات تصميم وبناء متكاملة، تشمل التصميم الداخلي، والتأثيث، والمقاولات العامة، والحلول المعيارية المخصصة لمختلف احتياجات المشاريع.",
+            "design_build_solutions_services": {
+                "interior-design-title": "التصميم الداخلي",
+                "interior-design-description": "حلول تصميم داخلي إبداعية وعملية للمساحات السكنية والتجارية والضيافة.",
+                "office-furniture-title": "أثاث مكتبي",
+                "office-furniture-description": "توفير أثاث مكتبي عالي الجودة ومريح لإنشاء مساحات عمل منتجة وحديثة.",
+                "airport-furniture-title": "أثاث المطارات",
+                "airport-furniture-description": "توريد حلول أثاث متينة ومريحة لصالات المطارات والصالات والمناطق العامة.",
+                "shops-home-finishing-title": "تشطيب المحلات والمنازل والديكور والأثاث",
+                "shops-home-finishing-description": "خدمات تشطيب وديكور وأثاث شاملة لكل من مساحات التجزئة والمساحات السكنية.",
+                "event-organization-management-title": "تنظيم وإدارة الفعاليات",
+                "event-organization-management-description": "خدمات تخطيط وإدارة فعاليات احترافية لتقديم تجارب لا تُنسى وسلسة.",
+                "general-contracting-title": "المقاولات العامة",
+                "general-contracting-description": "الإشراف على جميع جوانب مشاريع البناء وإدارتها من البداية إلى النهاية مع التركيز على الجودة والكفاءة.",
+                "construction-consulting-title": "استشارات البناء",
+                "construction-consulting-description": "خدمات استشارية متخصصة لمشاريع البناء، وتقديم التوجيه بشأن التخطيط والإدارة والتنفيذ.",
+                "special-projects-title": "مشاريع خاصة",
+                "special-projects-description": "التعامل مع المشاريع الفريدة والمعقدة التي تتطلب مهارات متخصصة وحلولاً مخصصة.",
+                "house-renovation-title": "تجديد المنازل",
+                "house-renovation-description": "تحويل وتحديث المنازل بخدمات تجديد كاملة لتعزيز مساحات المعيشة.",
+                "tiling-painting-flooring-title": "التبليط والدهانات والأرضيات الخشبية",
+                "tiling-painting-flooring-description": "توفير خدمات تركيب البلاط والدهانات والأرضيات الخشبية الاحترافية للحصول على لمسة نهائية مصقولة.",
+                "modular-solutions-title": "الحلول المعيارية (منازل-فنادق-شقق)",
+                "modular-solutions-description": "بناء معياري مبتكر للمنازل والفنادق والشقق، يوفر السرعة والجودة والاستدامة."
+            },
+
+            "ai_surveillance_systems": "أنظمة المراقبة بالذكاء الاصطناعي",
+            "ai_surveillance_systems_description": "أنظمة مراقبة متقدمة بالذكاء الاصطناعي للأراضي والبحار، تدمج رادارات بعيدة المدى وكاميرات حرارية وطائرات بدون طيار لتحقيق وعي ميداني فائق.",
+            "ai_surveillance_systems_services": {
+                "long-range-radars-title": "رادارات بعيدة المدى للأهداف الجوية والسطحية",
+                "long-range-radars-description": "",
+                "high-resolution-cameras-title": "كاميرات حرارية وبصرية عالية الدقة على مدار الساعة",
+                "high-resolution-cameras-description": "",
+                "drone-uav-integration-title": "تكامل الطائرات بدون طيار لتغطية واسعة وسريعة",
+                "drone-uav-integration-description": "",
+                "sonar-systems-title": "أنظمة السونار للكشف تحت الماء",
+                "sonar-systems-description": "",
+                "c4isr-platforms-title": "منصات C4ISR لدمج البيانات",
+                "c4isr-platforms-description": "",
+                "secured-communication-networks-title": "شبكات اتصالات مؤمنة في الوقت الفعلي",
+                "secured-communication-networks-description": "",
+                "situational-awareness-dashboards-title": "لوحات معلومات الوعي الظرفي للاستجابة السريعة",
+                "situational-awareness-dashboards-description": ""
+            },
+
+            "command_control_centers": "مراكز القيادة والتحكم",
+            "command_control_centers_description": "تصميم وتنفيذ مراكز قيادة موحدة تدمج أنظمة المراقبة والوصول وإنترنت الأشياء لإدارة مبسطة للطوارئ.",
+            "command_control_centers_services": {
+                "design-of-operation-rooms-title": "تصميم غرف العمليات والبنية التحتية السمعية والبصرية وتقنية المعلومات",
+                "design-of-operation-rooms-description": "",
+                "high-reliability-video-walls-title": "جدران فيديو عالية الموثوقية",
+                "high-reliability-video-walls-description": "",
+                "systems-integration-title": "تكامل الأنظمة: الدوائر التلفزيونية المغلقة، التحكم في الوصول، الإنذارات، إنترنت الأشياء، نظم المعلومات الجغرافية",
+                "systems-integration-description": "",
+                "event-management-procedures-title": "إدارة الأحداث وإجراءات الطوارئ (SOPs)",
+                "event-management-procedures-description": ""
+            },
+
+            "smart_security_systems": "الأنظمة الأمنية الذكية",
+            "smart_security_systems_description": "أنظمة أمنية ذكية تستخدم تحليلات الفيديو، والتعرف على الوجه، ومنصات PSIM/3D موحدة لتحسين الكشف والاستجابة.",
+            "smart_security_systems_services": {
+                "cctv-ai-video-analytics-title": "الدوائر التلفزيونية المغلقة + تحليلات الفيديو بالذكاء الاصطناعي (الكشف / التصنيف / التتبع)",
+                "cctv-ai-video-analytics-description": "",
+                "access-control-title": "التحكم في الوصول (الهوية الرقمية / QR / التعرف على الوجه)",
+                "access-control-description": "",
+                "early-warning-intrusion-detection-title": "الإنذار المبكر وكشف التسلل",
+                "early-warning-intrusion-detection-description": "",
+                "psim-3d-psim-title": "PSIM / 3D PSIM - إدارة موحدة للنظام في بيئة ثلاثية الأبعاد",
+                "psim-3d-psim-description": ""
+            },
+
+            "emergency_critical_communications": "اتصالات الطوارئ والاتصالات الحرجة",
+            "emergency_critical_communications_description": "إنشاء وتشغيل مراكز طوارئ 911 متعددة الوكالات، مع تكامل سلس للاتصالات وتدريب متخصص للاستجابة الفعالة للحوادث الحرجة.",
+            "emergency_critical_communications_services": {
+                "establishment-operation-911-centers-title": "إنشاء وتشغيل مراكز 911 متعددة الوكالات",
+                "establishment-operation-911-centers-description": "",
+                "integrated-communications-title": "اتصالات متكاملة بين الجهات المستجيبة",
+                "integrated-communications-description": "",
+                "training-personnel-managing-operations-title": "تدريب الأفراد وإدارة العمليات",
+                "training-personnel-managing-operations-description": ""
+            },
+
+            "security_consulting_operations": "الاستشارات والعمليات الأمنية",
+            "security_consulting_operations_description": "استشارات أمنية شاملة، من تطوير السياسات وإدارة المشاريع إلى التدريب المتخصص، لضمان الجاهزية التشغيلية الكاملة.",
+            "security_consulting_operations_services": {
+                "security-policies-procedures-governance-title": "السياسات والإجراءات والحوكمة الأمنية",
+                "security-policies-procedures-governance-description": "",
+                "conops-operational-readiness-plans-title": "مفاهيم العمليات والخطط التشغيلية والجاهزية",
+                "conops-operational-readiness-plans-description": "",
+                "management-operation-security-systems-projects-title": "إدارة وتشغيل الأنظمة والمشاريع الأمنية",
+                "management-operation-security-systems-projects-description": "",
+                "training-capacity-building-title": "التدريب وبناء القدرات",
+                "training-capacity-building-description": ""
+            },
+
+            "ai_cross_sector_applications": "الذكاء الاصطناعي وتطبيقاته عبر القطاعات",
+            "ai_cross_sector_applications_description": "تطوير حلول ذكاء اصطناعي للمدن الذكية والصناعة والرعاية الصحية، باستخدام التحليلات التنبؤية والأتمتة لتعزيز الكفاءة والسلامة.",
+
+            "ai_services": "خدمات الذكاء الاصطناعي",
+            "ai_services_description": "خدمات ذكاء اصطناعي متخصصة تشمل تقييم الجاهزية، استراتيجيات التحول الرقمي، تصميم حلول مبتكرة، وتدريب لبناء القدرات الوطنية.",
+
+            "feature_oriented_solutions": "الحلول المستقبلية",
+            "feature_oriented_solutions_description": "حلول رائدة من الجيل التالي باستخدام الواقع المعزز والافتراضي للتدريب، والميتافيرس لمراكز القيادة الافتراضية، والنظارات الذكية لإدارة أمنية تفاعلية."
+
+        },
+        "see-more-details": "عرض المزيد"
     },
     "footer": {
         "title": "تذييل",

@@ -112,10 +112,137 @@
         "title": "About Us"
     },
     "our-clients": {
-        "title": "Our Clients"
+        "title": "Our Clients",
+        "description": "Our clients are the backbone of our business. We are proud to work with some of the most prestigious companies in the world."
     },
     "our-partners": {
-        "title": "Our Partners"
+        "title": "Our Partners",
+        "description": "Our partners are the foundation of our business. We are proud to work with some of the most prestigious companies in the world."
+    },
+    "all-services": {
+        "title": "All Services",
+        "description": "All services we offer are comprehensive and specialized to meet client needs.",
+        "services": {
+
+            "design_build_solutions": "Design & Build Solutions",
+            "design_build_solutions_description": "End-to-end design and build services, including interior design, furnishing, general contracting, and custom modular solutions for diverse project needs.",
+            "design_build_solutions_services": {
+
+                "interior-design-title": "Interior Design",
+                "interior-design-description": "Creative and functional interior design solutions for residential, commercial, and hospitality spaces.",
+                
+                "office-furniture-title": "Office Furniture",
+                "office-furniture-description": "Providing high-quality and ergonomic office furniture to create productive and modern workspaces.",
+                
+                "airport-furniture-title": "Airport Furniture",
+                "airport-furniture-description": "Supplying durable and comfortable furniture solutions for airport terminals, lounges, and public areas.",
+                
+                "shops-home-finishing-title": "Shops & Home Finishing, Decoration & Furniture",
+                "shops-home-finishing-description": "Comprehensive finishing, decoration, and furniture services for both retail and residential spaces.",
+                
+                "event-organization-management-title": "Event Organization & Management",
+                "event-organization-management-description": "Professional event planning and management services to deliver memorable and seamless experiences.",
+                
+                "general-contracting-title": "General Contracting",
+                "general-contracting-description": "Overseeing and managing all aspects of construction projects from start to finish with a focus on quality and efficiency.",
+                
+                "construction-consulting-title": "Construction Consulting",
+                "construction-consulting-description": "Expert consulting services for construction projects, providing guidance on planning, management, and execution.",
+                
+                "special-projects-title": "Special Projects",
+                "special-projects-description": "Handling unique and complex projects that require specialized skills and customized solutions.",
+                
+                "house-renovation-title": "House Renovation",
+                "house-renovation-description": "Transforming and upgrading homes with complete renovation services to enhance living spaces.",
+                
+                "tiling-painting-flooring-title": "Tiling, Paintings & Laminate Flooring",
+                "tiling-painting-flooring-description": "Providing professional tiling, painting, and laminate flooring installation for a polished finish.",
+                
+                "modular-solutions-title": "Modular (Homes-Hotels-Apartments)",
+                "modular-solutions-description": "Innovative modular construction for homes, hotels, and apartments, offering speed, quality, and sustainability."
+
+            },
+
+            "ai_surveillance_systems": "AI Surveillance Systems",
+            "ai_surveillance_systems_description": "Advanced AI surveillance for land and sea, integrating long-range radar, thermal cameras, and UAVs for superior situational awareness and rapid response.",
+            "ai_surveillance_systems_services": {
+                "long-range-radars-title": "Long-range radars for air and surface targets",
+                "long-range-radars-description": "",
+                "high-resolution-cameras-title": "High-resolution thermal & optical cameras 24/7",
+                "high-resolution-cameras-description": "",
+                "drone-uav-integration-title": "Drone/UAV integration for wide, fast coverage",
+                "drone-uav-integration-description": "",
+                "sonar-systems-title": "Sonar systems for underwater detection",
+                "sonar-systems-description": "",
+                "c4isr-platforms-title": "C4ISR platforms for data fusion",
+                "c4isr-platforms-description": "",
+                "secured-communication-networks-title": "Secured real-time communication networks",
+                "secured-communication-networks-description": "",
+                "situational-awareness-dashboards-title": "Situational awareness dashboards for quick response",
+                "situational-awareness-dashboards-description": ""
+            },
+
+            "command_control_centers": "Command & Control Centers",
+            "command_control_centers_description": "Designing and implementing unified command centers with integrated CCTV, access control, and IoT for streamlined emergency management.",
+            "command_control_centers_services": {
+                "design-of-operation-rooms-title": "Design of operation rooms and AV/IT infrastructure",
+                "design-of-operation-rooms-description": "",
+                "high-reliability-video-walls-title": "High-reliability video walls",
+                "high-reliability-video-walls-description": "",
+                "systems-integration-title": "Systems integration: CCTV, Access Control, Alarms, IoT, GIS",
+                "systems-integration-description": "",
+                "event-management-procedures-title": "Event management and emergency procedures (SOPs)",
+                "event-management-procedures-description": ""
+            },
+
+            "smart_security_systems": "Smart Security Systems",
+            "smart_security_systems_description": "Intelligent security systems using AI video analytics, facial recognition, and unified 3D/PSIM platforms for enhanced detection and response.",
+            "smart_security_systems_services": {
+                "cctv-ai-video-analytics-title": "CCTV + AI Video Analytics (detection / classification / tracking)",
+                "cctv-ai-video-analytics-description": "",
+                "access-control-title": "Access Control (digital ID / QR / facial recognition)",
+                "access-control-description": "",
+                "early-warning-intrusion-detection-title": "Early warning and intrusion detection",
+                "early-warning-intrusion-detection-description": "",
+                "psim-3d-psim-title": "PSIM / 3D PSIM - unified system management in a 3D environment",
+                "psim-3d-psim-description": ""
+            },
+
+            "emergency_critical_communications": "Emergency & Critical Communications",
+            "emergency_critical_communications_description": "Establishing and operating multi-agency 911 centers with seamless communication integration and expert training for effective critical incident response.",
+            "emergency_critical_communications_services": {
+                "establishment-operation-911-centers-title": "Establishment and operation of multi-agency 911 centers",
+                "establishment-operation-911-centers-description": "",
+                "integrated-communications-title": "Integrated communications between responding entities",
+                "integrated-communications-description": "",
+                "training-personnel-managing-operations-title": "Training personnel and managing operations",
+                "training-personnel-managing-operations-description": ""
+            },
+
+            "security_consulting_operations": "Security Consulting & Operations",
+            "security_consulting_operations_description": "Comprehensive security consulting, from policy development and project management to specialized training, ensuring full operational readiness.",
+            "security_consulting_operations_services": {
+                "security-policies-procedures-governance-title": "Security policies, procedures, and governance",
+                "security-policies-procedures-governance-description": "",
+                "conops-operational-readiness-plans-title": "CONOPS, operational and readiness plans",
+                "conops-operational-readiness-plans-description": "",
+                "management-operation-security-systems-projects-title": "Management and operation of security systems and projects",
+                "management-operation-security-systems-projects-description": "",
+                "training-capacity-building-title": "Training and capacity building",
+                "training-capacity-building-description": ""
+            },
+
+            "ai_cross_sector_applications": "AI Cross-Sector Applications",
+            "ai_cross_sector_applications_description": "Developing cross-sector AI solutions for smart cities, industry, and healthcare using predictive analytics and automation to boost efficiency and safety.",
+
+            "ai_services": "AI Services",
+            "ai_services_description": "Specialized AI services including readiness assessments, digital transformation strategy, and innovative solution design, plus training to build national capabilities.",
+
+            "feature_oriented_solutions": "Future-Oriented Solutions",
+            "feature_oriented_solutions_description": "Pioneering next-gen solutions with AR/VR for training, Metaverse for virtual command centers, and smart glasses for interactive security management."
+
+        },
+        "see-more-details": "See More Details"
     },
     "footer": {
         "title": "Footer",

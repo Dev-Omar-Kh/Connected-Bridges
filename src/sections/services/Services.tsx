@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next';
 import ServiceCard from '../../components/cards/ServiceCard';
-import { Bell, BrainCircuit, DraftingCompass, GlobeLock, MonitorCog, ShieldCheck } from 'lucide-react';
+import { BrainCircuit, DraftingCompass, GlobeLock, MonitorCog, PhoneCall, ShieldCheck } from 'lucide-react';
 import { ROUTES } from '../../constants/routes';
 
 export default function Services() {
@@ -13,7 +13,7 @@ export default function Services() {
         { id: 2, isNew: true, icon: BrainCircuit, title: t('overview.services.ai_surveillance_systems'), link: ROUTES.HOME_ROUTE, description: t('overview.services.ai_surveillance_systems_description') },
         { id: 3, icon: MonitorCog, title: t('overview.services.command_control_centers'), link: ROUTES.HOME_ROUTE, description: t('overview.services.command_control_centers_description') },
         { id: 4, icon: GlobeLock, title: t('overview.services.smart_security_systems'), link: ROUTES.HOME_ROUTE, description: t('overview.services.smart_security_systems_description') },
-        { id: 5, icon: Bell, title: t('overview.services.emergency_critical_communications'), link: ROUTES.HOME_ROUTE, description: t('overview.services.emergency_critical_communications_description') },
+        { id: 5, icon: PhoneCall, title: t('overview.services.emergency_critical_communications'), link: ROUTES.HOME_ROUTE, description: t('overview.services.emergency_critical_communications_description') },
         { id: 6, isNew: true, icon: ShieldCheck, title: t('overview.services.security_consulting_operations'), link: ROUTES.HOME_ROUTE, description: t('overview.services.security_consulting_operations_description') },
         // { id: 7, icon: BrainCircuit, title: t('overview.services.ai_cross_sector_applications'), link: ROUTES.HOME_ROUTE, description: t('overview.services.ai_cross_sector_applications_description') },
         // { id: 8, icon: BrainCircuit, title: t('overview.services.ai_services'), link: ROUTES.HOME_ROUTE, description: t('overview.services.ai_services_description') },

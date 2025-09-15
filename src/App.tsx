@@ -8,14 +8,20 @@ import About from './pages/about/About';
 import { ROUTES } from './constants/routes';
 import OurClients from './pages/our-clients/OurClients';
 import OurPartners from './pages/our-partners/OurPartners';
+import AllServices from './pages/services/all-services/AllServices';
 
 const routes = createHashRouter([
 
     {path: ROUTES.HOME_ROUTE, element: <MainLayout />, children: [
+
         {index: true, element: <Home />},
+
         {path: `/${ROUTES.ABOUT_ROUTE}/${ROUTES.ABOUT_US_ROUTE}`, element: <About />},
         {path: `/${ROUTES.ABOUT_ROUTE}/${ROUTES.OUR_CLIENTS_ROUTE}`, element: <OurClients />},
         {path: `/${ROUTES.ABOUT_ROUTE}/${ROUTES.OUR_PARTNERS_ROUTE}`, element: <OurPartners />},
+
+        {path: `/${ROUTES.SERVICES_ROUTE}/${ROUTES.ALL_SERVICES_ROUTE}`, element: <AllServices />},
+
     ]},
 
     {path: ROUTES.NOT_FOUND_ROUTE, element: <Error />}
