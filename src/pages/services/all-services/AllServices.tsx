@@ -2,8 +2,13 @@ import React from 'react';
 import PageTitle from '../../../components/titles/PageTitle';
 import ServicesCard from '../../../components/cards/ServicesCard';
 import { AllServicesData } from '../../../constants/services';
+import { useTranslation } from 'react-i18next';
+
+type Service = ReturnType<typeof AllServicesData>[number];
 
 export default function AllServices() {
+
+    const { t } = useTranslation();
 
     return <React.Fragment>
 
@@ -12,7 +17,7 @@ export default function AllServices() {
             <PageTitle title={'all-services.title'} description={'all-services.description'} />
 
             <section className='common-p-inline space-y-5'>
-                {AllServicesData.map((service) => (
+                {AllServicesData(t).map((service: Service) => (
                     <ServicesCard key={service.id} data={service} />
                 ))}
             </section>

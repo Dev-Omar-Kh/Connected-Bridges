@@ -167,69 +167,69 @@
             "ai_surveillance_systems_description": "Advanced AI surveillance for land and sea, integrating long-range radar, thermal cameras, and UAVs for superior situational awareness and rapid response.",
             "ai_surveillance_systems_services": {
                 "long-range-radars-title": "Long-range radars for air and surface targets",
-                "long-range-radars-description": "",
+                "long-range-radars-description": "Advanced radar systems capable of detecting and tracking air and surface targets over extensive distances, providing early warning and comprehensive situational awareness.",
                 "high-resolution-cameras-title": "High-resolution thermal & optical cameras 24/7",
-                "high-resolution-cameras-description": "",
+                "high-resolution-cameras-description": "Continuous surveillance with high-resolution thermal and optical cameras, ensuring reliable target identification and monitoring in all lighting and weather conditions.",
                 "drone-uav-integration-title": "Drone/UAV integration for wide, fast coverage",
-                "drone-uav-integration-description": "",
+                "drone-uav-integration-description": "Seamless integration of unmanned aerial vehicles (UAVs) to expand surveillance reach, offering rapid deployment and extensive area coverage for dynamic monitoring.",
                 "sonar-systems-title": "Sonar systems for underwater detection",
-                "sonar-systems-description": "",
+                "sonar-systems-description": "State-of-the-art sonar technology for detecting, classifying, and tracking underwater threats, securing maritime environments effectively.",
                 "c4isr-platforms-title": "C4ISR platforms for data fusion",
-                "c4isr-platforms-description": "",
+                "c4isr-platforms-description": "Integrated C4ISR platforms that fuse data from multiple sensors into a single, coherent operational picture, enhancing decision-making and response coordination.",
                 "secured-communication-networks-title": "Secured real-time communication networks",
-                "secured-communication-networks-description": "",
+                "secured-communication-networks-description": "Robust and encrypted communication networks ensuring secure, real-time data transmission and voice communication between command centers and field units.",
                 "situational-awareness-dashboards-title": "Situational awareness dashboards for quick response",
-                "situational-awareness-dashboards-description": ""
+                "situational-awareness-dashboards-description": "Intuitive dashboards providing a comprehensive, real-time view of the operational environment, enabling rapid assessment and decisive response to emerging incidents."
             },
 
             "command_control_centers": "Command & Control Centers",
             "command_control_centers_description": "Designing and implementing unified command centers with integrated CCTV, access control, and IoT for streamlined emergency management.",
             "command_control_centers_services": {
                 "design-of-operation-rooms-title": "Design of operation rooms and AV/IT infrastructure",
-                "design-of-operation-rooms-description": "",
+                "design-of-operation-rooms-description": "Expert design of ergonomic and technologically advanced operation rooms, including complete AV and IT infrastructure for seamless information flow and control.",
                 "high-reliability-video-walls-title": "High-reliability video walls",
-                "high-reliability-video-walls-description": "",
+                "high-reliability-video-walls-description": "Installation of high-resolution, reliable video walls for displaying critical information from multiple sources, ensuring continuous and clear visualization for operators.",
                 "systems-integration-title": "Systems integration: CCTV, Access Control, Alarms, IoT, GIS",
-                "systems-integration-description": "",
+                "systems-integration-description": "Comprehensive integration of disparate security systems—including CCTV, access control, alarms, IoT devices, and GIS—into a unified and manageable platform.",
                 "event-management-procedures-title": "Event management and emergency procedures (SOPs)",
-                "event-management-procedures-description": ""
+                "event-management-procedures-description": "Development of standardized operating procedures (SOPs) for event management and emergency response, ensuring consistent and effective actions during critical incidents."
             },
 
             "smart_security_systems": "Smart Security Systems",
             "smart_security_systems_description": "Intelligent security systems using AI video analytics, facial recognition, and unified 3D/PSIM platforms for enhanced detection and response.",
             "smart_security_systems_services": {
                 "cctv-ai-video-analytics-title": "CCTV + AI Video Analytics (detection / classification / tracking)",
-                "cctv-ai-video-analytics-description": "",
+                "cctv-ai-video-analytics-description": "Intelligent CCTV systems powered by AI video analytics for automated detection, classification, and tracking of objects, people, and events in real-time.",
                 "access-control-title": "Access Control (digital ID / QR / facial recognition)",
-                "access-control-description": "",
+                "access-control-description": "Advanced access control solutions utilizing digital IDs, QR codes, and facial recognition technology to secure premises and manage entry with precision.",
                 "early-warning-intrusion-detection-title": "Early warning and intrusion detection",
-                "early-warning-intrusion-detection-description": "",
+                "early-warning-intrusion-detection-description": "Proactive security through early warning and intrusion detection systems, using a multi-layered approach to identify and alert on potential threats before they escalate.",
                 "psim-3d-psim-title": "PSIM / 3D PSIM - unified system management in a 3D environment",
-                "psim-3d-psim-description": ""
+                "psim-3d-psim-description": "Unified security management with PSIM and 3D PSIM platforms, providing a three-dimensional operational view for intuitive monitoring and control of all integrated systems."
             },
 
             "emergency_critical_communications": "Emergency & Critical Communications",
             "emergency_critical_communications_description": "Establishing and operating multi-agency 911 centers with seamless communication integration and expert training for effective critical incident response.",
             "emergency_critical_communications_services": {
                 "establishment-operation-911-centers-title": "Establishment and operation of multi-agency 911 centers",
-                "establishment-operation-911-centers-description": "",
+                "establishment-operation-911-centers-description": "Complete services for establishing and operating state-of-the-art 911 emergency centers, facilitating collaboration between multiple public safety agencies.",
                 "integrated-communications-title": "Integrated communications between responding entities",
-                "integrated-communications-description": "",
+                "integrated-communications-description": "Seamless communication systems that integrate various responding entities—police, fire, and medical services—for coordinated and efficient incident response.",
                 "training-personnel-managing-operations-title": "Training personnel and managing operations",
-                "training-personnel-managing-operations-description": ""
+                "training-personnel-managing-operations-description": "Comprehensive training programs for emergency center personnel and ongoing operational management to ensure high standards of performance and readiness."
             },
 
             "security_consulting_operations": "Security Consulting & Operations",
             "security_consulting_operations_description": "Comprehensive security consulting, from policy development and project management to specialized training, ensuring full operational readiness.",
             "security_consulting_operations_services": {
                 "security-policies-procedures-governance-title": "Security policies, procedures, and governance",
-                "security-policies-procedures-governance-description": "",
+                "security-policies-procedures-governance-description": "Developing robust security policies, procedures, and governance frameworks to establish clear security protocols and ensure compliance across the organization.",
                 "conops-operational-readiness-plans-title": "CONOPS, operational and readiness plans",
-                "conops-operational-readiness-plans-description": "",
+                "conops-operational-readiness-plans-description": "Creation of Concept of Operations (CONOPS), operational plans, and readiness strategies to prepare for and effectively manage a wide range of security scenarios.",
                 "management-operation-security-systems-projects-title": "Management and operation of security systems and projects",
-                "management-operation-security-systems-projects-description": "",
+                "management-operation-security-systems-projects-description": "Professional management and operation of complex security systems and projects, from initial implementation to ongoing maintenance and optimization.",
                 "training-capacity-building-title": "Training and capacity building",
-                "training-capacity-building-description": ""
+                "training-capacity-building-description": "Specialized training and capacity-building programs designed to enhance the skills and knowledge of security personnel, fostering a culture of security excellence."
             },
 
             "ai_cross_sector_applications": "AI Cross-Sector Applications",

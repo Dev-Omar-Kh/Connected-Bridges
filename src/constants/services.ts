@@ -35,15 +35,16 @@ import { LuLayoutDashboard, LuPlaneTakeoff } from "react-icons/lu";
 import { PiOfficeChair, PiPaintBrushBroad } from "react-icons/pi";
 // import { CiShop } from "react-icons/ci";
 import { MdOutlineEventNote, MdOutlineHeadsetMic } from "react-icons/md";
+import type { TFunction } from "i18next";
 
-export const AllServicesData = [
+export const AllServicesData = (t: TFunction) => [
 
     {
         id: 1,
         title: 'all-services.services.design_build_solutions',
         description: 'all-services.services.design_build_solutions_description',
         icon: DraftingCompass,
-        link: `${ROUTES.SERVICES_ROUTE}/1`,
+        link: `${ROUTES.SERVICES_ROUTE}/${t('all-services.services.design_build_solutions').toLowerCase().replace(/ /g, '-')}/1`,
         services: [
             {
                 id: 1,
@@ -113,12 +114,13 @@ export const AllServicesData = [
             },
         ]
     },
+
     {
         id: 2,
         title: 'all-services.services.ai_surveillance_systems',
         description: 'all-services.services.ai_surveillance_systems_description',
         icon: BrainCircuit,
-        link: `${ROUTES.SERVICES_ROUTE}/2`,
+        link: `${ROUTES.SERVICES_ROUTE}/${t('all-services.services.ai_surveillance_systems').toLowerCase().replace(/ /g, '-')}/2`,
         services: [
             {
                 id: 1,
@@ -164,12 +166,13 @@ export const AllServicesData = [
             },
         ]
     },
+
     {
         id: 3,
         title: 'all-services.services.command_control_centers',
         description: 'all-services.services.command_control_centers_description',
         icon: MonitorCog,
-        link: `${ROUTES.SERVICES_ROUTE}/3`,
+        link: `${ROUTES.SERVICES_ROUTE}/${t('all-services.services.command_control_centers').toLowerCase().replace(/ /g, '-')}/3`,
         services: [
             {
                 id: 1,
@@ -197,12 +200,13 @@ export const AllServicesData = [
             },
         ]
     },
+
     {
         id: 4,
         title: 'all-services.services.smart_security_systems',
         description: 'all-services.services.smart_security_systems_description',
         icon: GlobeLock,
-        link: `${ROUTES.SERVICES_ROUTE}/4`,
+        link: `${ROUTES.SERVICES_ROUTE}/${t('all-services.services.smart_security_systems').toLowerCase().replace(/ /g, '-')}/4`,
         services: [
             {
                 id: 1,
@@ -230,12 +234,13 @@ export const AllServicesData = [
             },
         ]
     },
+
     {
         id: 5,
         title: 'all-services.services.emergency_critical_communications',
         description: 'all-services.services.emergency_critical_communications_description',
         icon: PhoneCall,
-        link: `${ROUTES.SERVICES_ROUTE}/5`,
+        link: `${ROUTES.SERVICES_ROUTE}/${t('all-services.services.emergency_critical_communications').toLowerCase().replace(/ /g, '-')}/5`,
         services: [
             {
                 id: 1,
@@ -257,12 +262,13 @@ export const AllServicesData = [
             },
         ]
     },
+
     {
         id: 6,
         title: 'all-services.services.security_consulting_operations',
         description: 'all-services.services.security_consulting_operations_description',
         icon: ShieldCheck,
-        link: `${ROUTES.SERVICES_ROUTE}/6`,
+        link: `${ROUTES.SERVICES_ROUTE}/${t('all-services.services.security_consulting_operations').toLowerCase().replace(/ /g, '-')}/6`,
         services: [
             {
                 id: 1,

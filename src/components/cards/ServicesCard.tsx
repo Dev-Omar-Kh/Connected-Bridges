@@ -100,7 +100,7 @@ export default function ServicesCard({ data }: ServicesCardProps) {
                         <div className='w-full pt-5 border-t border-[var(--light-gray-color)] flex items-center justify-end'>
 
                             <Link 
-                                to={data.link} 
+                                to={`/${data.link}`} 
                                 className={`
                                     px-5 py-2.5 rounded-md ${i18n.language === 'ar' ? 'bg-gradient-to-r' : 'bg-gradient-to-l'}
                                     flex items-center gap-2.5 max-[780px]:w-full max-[780px]:justify-center

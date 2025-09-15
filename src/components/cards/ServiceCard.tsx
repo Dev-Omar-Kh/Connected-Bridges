@@ -1,28 +1,24 @@
-import React, { type ReactNode } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { ROUTES } from '../../constants/routes';
 import { ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 type ServiceCardProps = {
-    id: number;
+    id?: number;
     title: string;
     description: string;
-    icon: ReactNode;
+    icon: React.ElementType;
+    link?: string;
+    isLink?: boolean;
 };
 
-export default function ServiceCard({ id, title, description, icon }: ServiceCardProps) {
+const ServiceCardContent = ({ title, description, icon : Icon }: ServiceCardProps) => {
 
-    const {i18n} = useTranslation();
+    const {t, i18n} = useTranslation();
 
     return <React.Fragment>
 
-        <Link 
-            to={`${ROUTES.SERVICES_ROUTE}/${title.toLowerCase().replace(/ /g, '-')}/${id}`} 
-            className='p-5 flex flex-col gap-2.5 rounded-lg bg-[var(--white-color)] group'
-        >
-
-            <div className='flex items-center justify-between gap-2.5'>
+        <div className='flex items-center justify-between gap-2.5'>
 
                 <div 
                     className='
@@ -31,7 +27,7 @@ export default function ServiceCard({ id, title, description, icon }: ServiceCar
                         group-hover:bg-[var(--light-blue-color)] group-hover:text-[var(--white-color)] duration-300
                     '
                 >
-                    {icon}
+                    <Icon size={28} />
                 </div>
 
                 <div 
@@ -45,11 +41,37 @@ export default function ServiceCard({ id, title, description, icon }: ServiceCar
 
             </div>
 
-            <h4 className='text-xl text-start font-semibold text-[var(--dark-blue-color)]'>{title}</h4>
+            <h4 className='text-xl text-start font-semibold text-[var(--dark-blue-color)]'>{t(title)}</h4>
 
-            <p className='text-sm text-start text-[var(--dark-blue-color)] opacity-80'>{description}</p>
+            <p className='text-sm text-start text-[var(--dark-blue-color)] opacity-80'>{t(description)}</p>
 
-        </Link>
+    </React.Fragment>
+
+}
+
+
+export default function ServiceCard({ title, description, icon : Icon, isLink = true, link }: ServiceCardProps) {
+
+    return <React.Fragment>
+
+        {isLink ? (
+            <Link 
+                to={`/${link}`} 
+                className='p-5 flex flex-col gap-2.5 rounded-lg bg-[var(--white-color)] group'
+            >
+
+                <ServiceCardContent title={title} description={description} icon={Icon} />
+
+            </Link>
+        ) : (
+            <div 
+                className='p-5 flex flex-col gap-2.5 rounded-lg bg-[var(--white-color)] group'
+            >
+
+                <ServiceCardContent title={title} description={description} icon={Icon} />
+
+            </div>
+        )}
 
     </React.Fragment>
 

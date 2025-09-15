@@ -156,69 +156,69 @@
             "ai_surveillance_systems_description": "أنظمة مراقبة متقدمة بالذكاء الاصطناعي للأراضي والبحار، تدمج رادارات بعيدة المدى وكاميرات حرارية وطائرات بدون طيار لتحقيق وعي ميداني فائق.",
             "ai_surveillance_systems_services": {
                 "long-range-radars-title": "رادارات بعيدة المدى للأهداف الجوية والسطحية",
-                "long-range-radars-description": "",
+                "long-range-radars-description": "أنظمة رادار متقدمة قادرة على كشف وتتبع الأهداف الجوية والسطحية عبر مسافات شاسعة، مما يوفر إنذارًا مبكرًا ووعيًا شاملاً بالموقف.",
                 "high-resolution-cameras-title": "كاميرات حرارية وبصرية عالية الدقة على مدار الساعة",
-                "high-resolution-cameras-description": "",
+                "high-resolution-cameras-description": "مراقبة مستمرة بكاميرات حرارية وبصرية عالية الدقة، مما يضمن تحديدًا موثوقًا للأهداف ومراقبتها في جميع ظروف الإضاءة والطقس.",
                 "drone-uav-integration-title": "تكامل الطائرات بدون طيار لتغطية واسعة وسريعة",
-                "drone-uav-integration-description": "",
+                "drone-uav-integration-description": "تكامل سلس للطائرات بدون طيار لتوسيع نطاق المراقبة، مما يوفر انتشارًا سريعًا وتغطية واسعة للمناطق للمراقبة الديناميكية.",
                 "sonar-systems-title": "أنظمة السونار للكشف تحت الماء",
-                "sonar-systems-description": "",
+                "sonar-systems-description": "تقنية سونار حديثة لكشف وتصنيف وتتبع التهديدات تحت الماء، وتأمين البيئات البحرية بفعالية.",
                 "c4isr-platforms-title": "منصات C4ISR لدمج البيانات",
-                "c4isr-platforms-description": "",
+                "c4isr-platforms-description": "منصات C4ISR متكاملة تدمج البيانات من أجهزة استشعار متعددة في صورة تشغيلية واحدة ومتماسكة، مما يعزز اتخاذ القرار وتنسيق الاستجابة.",
                 "secured-communication-networks-title": "شبكات اتصالات مؤمنة في الوقت الفعلي",
-                "secured-communication-networks-description": "",
+                "secured-communication-networks-description": "شبكات اتصالات قوية ومشفرة تضمن نقل البيانات والاتصالات الصوتية بشكل آمن وفي الوقت الفعلي بين مراكز القيادة والوحدات الميدانية.",
                 "situational-awareness-dashboards-title": "لوحات معلومات الوعي الظرفي للاستجابة السريعة",
-                "situational-awareness-dashboards-description": ""
+                "situational-awareness-dashboards-description": "لوحات معلومات سهلة الاستخدام توفر رؤية شاملة وفي الوقت الفعلي للبيئة التشغيلية، مما يتيح التقييم السريع والاستجابة الحاسمة للحوادث الناشئة."
             },
 
             "command_control_centers": "مراكز القيادة والتحكم",
             "command_control_centers_description": "تصميم وتنفيذ مراكز قيادة موحدة تدمج أنظمة المراقبة والوصول وإنترنت الأشياء لإدارة مبسطة للطوارئ.",
             "command_control_centers_services": {
                 "design-of-operation-rooms-title": "تصميم غرف العمليات والبنية التحتية السمعية والبصرية وتقنية المعلومات",
-                "design-of-operation-rooms-description": "",
+                "design-of-operation-rooms-description": "تصميم احترافي لغرف عمليات مريحة ومتقدمة تقنيًا، بما في ذلك بنية تحتية كاملة للصوت والصورة وتقنية المعلومات لضمان تدفق سلس للمعلومات والتحكم.",
                 "high-reliability-video-walls-title": "جدران فيديو عالية الموثوقية",
-                "high-reliability-video-walls-description": "",
+                "high-reliability-video-walls-description": "تركيب جدران فيديو عالية الدقة والموثوقية لعرض المعلومات الحيوية من مصادر متعددة، مما يضمن تصورًا مستمرًا وواضحًا للمشغلين.",
                 "systems-integration-title": "تكامل الأنظمة: الدوائر التلفزيونية المغلقة، التحكم في الوصول، الإنذارات، إنترنت الأشياء، نظم المعلومات الجغرافية",
-                "systems-integration-description": "",
+                "systems-integration-description": "تكامل شامل للأنظمة الأمنية المختلفة - بما في ذلك الدوائر التلفزيونية المغلقة والتحكم في الوصول والإنذارات وأجهزة إنترنت الأشياء ونظم المعلومات الجغرافية - في منصة موحدة وسهلة الإدارة.",
                 "event-management-procedures-title": "إدارة الأحداث وإجراءات الطوارئ (SOPs)",
-                "event-management-procedures-description": ""
+                "event-management-procedures-description": "تطوير إجراءات تشغيل موحدة (SOPs) لإدارة الأحداث والاستجابة للطوارئ، مما يضمن اتخاذ إجراءات متسقة وفعالة أثناء الحوادث الحرجة."
             },
 
             "smart_security_systems": "الأنظمة الأمنية الذكية",
             "smart_security_systems_description": "أنظمة أمنية ذكية تستخدم تحليلات الفيديو، والتعرف على الوجه، ومنصات PSIM/3D موحدة لتحسين الكشف والاستجابة.",
             "smart_security_systems_services": {
                 "cctv-ai-video-analytics-title": "الدوائر التلفزيونية المغلقة + تحليلات الفيديو بالذكاء الاصطناعي (الكشف / التصنيف / التتبع)",
-                "cctv-ai-video-analytics-description": "",
+                "cctv-ai-video-analytics-description": "أنظمة دوائر تلفزيونية مغلقة ذكية مدعومة بتحليلات الفيديو بالذكاء الاصطناعي للكشف والتصنيف والتتبع الآلي للأشياء والأشخاص والأحداث في الوقت الفعلي.",
                 "access-control-title": "التحكم في الوصول (الهوية الرقمية / QR / التعرف على الوجه)",
-                "access-control-description": "",
+                "access-control-description": "حلول متقدمة للتحكم في الوصول تستخدم الهويات الرقمية ورموز الاستجابة السريعة وتقنية التعرف على الوجه لتأمين المباني وإدارة الدخول بدقة.",
                 "early-warning-intrusion-detection-title": "الإنذار المبكر وكشف التسلل",
-                "early-warning-intrusion-detection-description": "",
+                "early-warning-intrusion-detection-description": "أمن استباقي من خلال أنظمة الإنذار المبكر وكشف التسلل، باستخدام نهج متعدد الطبقات لتحديد التهديدات المحتملة والتنبيه بشأنها قبل تفاقمها.",
                 "psim-3d-psim-title": "PSIM / 3D PSIM - إدارة موحدة للنظام في بيئة ثلاثية الأبعاد",
-                "psim-3d-psim-description": ""
+                "psim-3d-psim-description": "إدارة أمنية موحدة مع منصات PSIM و 3D PSIM، مما يوفر رؤية تشغيلية ثلاثية الأبعاد للمراقبة والتحكم السهل في جميع الأنظمة المتكاملة."
             },
 
             "emergency_critical_communications": "اتصالات الطوارئ والاتصالات الحرجة",
             "emergency_critical_communications_description": "إنشاء وتشغيل مراكز طوارئ 911 متعددة الوكالات، مع تكامل سلس للاتصالات وتدريب متخصص للاستجابة الفعالة للحوادث الحرجة.",
             "emergency_critical_communications_services": {
                 "establishment-operation-911-centers-title": "إنشاء وتشغيل مراكز 911 متعددة الوكالات",
-                "establishment-operation-911-centers-description": "",
+                "establishment-operation-911-centers-description": "خدمات كاملة لإنشاء وتشغيل مراكز طوارئ 911 حديثة، مما يسهل التعاون بين وكالات السلامة العامة المتعددة.",
                 "integrated-communications-title": "اتصالات متكاملة بين الجهات المستجيبة",
-                "integrated-communications-description": "",
+                "integrated-communications-description": "أنظمة اتصالات سلسة تدمج مختلف الجهات المستجيبة - الشرطة والإطفاء والخدمات الطبية - للاستجابة المنسقة والفعالة للحوادث.",
                 "training-personnel-managing-operations-title": "تدريب الأفراد وإدارة العمليات",
-                "training-personnel-managing-operations-description": ""
+                "training-personnel-managing-operations-description": "برامج تدريبية شاملة لموظفي مراكز الطوارئ وإدارة تشغيلية مستمرة لضمان معايير عالية من الأداء والجاهزية."
             },
 
             "security_consulting_operations": "الاستشارات والعمليات الأمنية",
             "security_consulting_operations_description": "استشارات أمنية شاملة، من تطوير السياسات وإدارة المشاريع إلى التدريب المتخصص، لضمان الجاهزية التشغيلية الكاملة.",
             "security_consulting_operations_services": {
                 "security-policies-procedures-governance-title": "السياسات والإجراءات والحوكمة الأمنية",
-                "security-policies-procedures-governance-description": "",
+                "security-policies-procedures-governance-description": "تطوير سياسات وإجراءات وحوكمة أمنية قوية لوضع بروتوكولات أمنية واضحة وضمان الامتثال في جميع أنحاء المنظمة.",
                 "conops-operational-readiness-plans-title": "مفاهيم العمليات والخطط التشغيلية والجاهزية",
-                "conops-operational-readiness-plans-description": "",
+                "conops-operational-readiness-plans-description": "إنشاء مفاهيم العمليات (CONOPS) والخطط التشغيلية واستراتيجيات الجاهزية للتحضير لمجموعة واسعة من السيناريوهات الأمنية وإدارتها بفعالية.",
                 "management-operation-security-systems-projects-title": "إدارة وتشغيل الأنظمة والمشاريع الأمنية",
-                "management-operation-security-systems-projects-description": "",
+                "management-operation-security-systems-projects-description": "إدارة وتشغيل احترافي للأنظمة والمشاريع الأمنية المعقدة، من التنفيذ الأولي إلى الصيانة والتحسين المستمر.",
                 "training-capacity-building-title": "التدريب وبناء القدرات",
-                "training-capacity-building-description": ""
+                "training-capacity-building-description": "برامج تدريبية متخصصة وبناء قدرات مصممة لتعزيز مهارات ومعرفة موظفي الأمن، وتعزيز ثقافة التميز الأمني."
             },
 
             "ai_cross_sector_applications": "الذكاء الاصطناعي وتطبيقاته عبر القطاعات",
