@@ -29,9 +29,9 @@ export default function ServicesCard({ data }: ServicesCardProps) {
 
     return <React.Fragment>
 
-        <div onClick={() => setIsOpen(!isOpen)} className='w-full p-5 space-y-5 rounded-lg bg-[var(--white-color)] cursor-pointer shadow-md'>
+        <div className='w-full p-5 space-y-5 rounded-lg bg-[var(--white-color)] cursor-pointer shadow-md'>
 
-            <div className='flex items-center justify-between gap-5 flex-wrap group'>
+            <div onClick={() => setIsOpen(!isOpen)} className='flex items-center justify-between gap-5 flex-wrap group'>
 
                 <div className='flex items-center gap-5'>
                     <div 
