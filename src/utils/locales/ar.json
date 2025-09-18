@@ -233,6 +233,49 @@
         },
         "see-more-details": "عرض المزيد"
     },
+    "contact-us": {
+        "title": "تواصل معنا",
+        "description": "نحن هنا لمساعدتك. يمكنك الاتصال بنا من خلال البريد الإلكتروني أو الهاتف.",
+        "form": {
+            "title": "احصل على مشاورة مجانية",
+            "name": "الاسم",
+            "name-placeholder": "أدخل اسمك",
+            "email": "البريد الإلكتروني",
+            "email-placeholder": "أدخل بريدك الإلكتروني",
+            "phone": "الهاتف",
+            "phone-placeholder": "أدخل هاتفك",
+            "service": "الخدمة المطلوبة",
+            "service-placeholder": "اختر خدمة",
+            "project_details": "تفاصيل المشروع",
+            "project_details-placeholder": "أدخل تفاصيل المشروع",
+            "submit": "إرسال",
+            "submitting": "جاري الإرسال...",
+            "success-message": "شكراً لك! تم إرسال طلب الاستشارة بنجاح. سنتواصل معك قريباً.",
+            "validation": {
+                "name-required": "الاسم مطلوب",
+                "name-min": "الاسم يجب أن يكون على الأقل حرفين",
+                "name-max": "الاسم يجب ألا يتجاوز 50 حرف",
+                "email-required": "البريد الإلكتروني مطلوب",
+                "email-invalid": "يرجى إدخال بريد إلكتروني صحيح",
+                "phone-required": "رقم الهاتف مطلوب",
+                "phone-invalid": "يرجى إدخال رقم هاتف صحيح",
+                "service-required": "يرجى اختيار خدمة",
+                "project-details-required": "تفاصيل المشروع مطلوبة",
+                "project-details-min": "تفاصيل المشروع يجب أن تكون على الأقل 10 أحرف",
+                "project-details-max": "تفاصيل المشروع يجب ألا تتجاوز 1000 حرف"
+            }
+        },
+        "info-cards": {
+            "phone": "رقم الهاتف",
+            "phone-description": "+20 1140067845",
+            "email": "البريد الإلكتروني",
+            "email-description": "info@connectedbridges.com",
+            "location": "الموقع",
+            "live-location-title": "الموقع الحي",
+            "location-description": "المكتب 9، 1321، شارع الملك عبدالعزيز، الرياض، المملكة العربية السعودية",
+            "location-description-blocked": "الخريطة غير متاحة - محجوبة من قبل المتصفح"
+        }
+    },
     "footer": {
         "title": "تذييل",
         "description": "شركة سعودية تقدّم حلول التصميم والبناء المتكاملة مدعومة بتقنيات الأمن والذكاء الاصطناعي. نعمل مع الجهات الحكومية والقطاع الخاص من التصميم إلى التنفيذ والتشغيل، لتقديم مشاريع موثوقة عالية الجودة.",

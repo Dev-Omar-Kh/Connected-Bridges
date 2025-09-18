@@ -10,6 +10,7 @@ import OurClients from './pages/our-clients/OurClients';
 import OurPartners from './pages/our-partners/OurPartners';
 import AllServices from './pages/services/all-services/AllServices';
 import SingleService from './pages/services/single-service/SingleService';
+import ContactUs from './pages/contact-us/ContactUs';
 
 const routes = createHashRouter([
 
@@ -23,6 +24,8 @@ const routes = createHashRouter([
 
         {path: `/${ROUTES.SERVICES_ROUTE}/${ROUTES.ALL_SERVICES_ROUTE}`, element: <AllServices />},
         {path: `/${ROUTES.SERVICES_ROUTE}/:name/:id`, element: <SingleService />},
+
+        {path: `/${ROUTES.CONTACT_US_ROUTE}`, element: <ContactUs />},
 
     ]},
 

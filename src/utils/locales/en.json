@@ -244,6 +244,49 @@
         },
         "see-more-details": "See More Details"
     },
+    "contact-us": {
+        "title": "Contact Us",
+        "description": "We are here to help you. You can contact us through email or phone.",
+        "form": {
+            "title": "Get Free Consultation",
+            "name": "Name",
+            "name-placeholder": "Enter your name",
+            "email": "Email",
+            "email-placeholder": "Enter your email",
+            "phone": "Phone",
+            "phone-placeholder": "Enter your phone",
+            "service": "Service Needed",
+            "service-placeholder": "Select a service",
+            "project_details": "Project Details",
+            "project_details-placeholder": "Enter your project details",
+            "submit": "Submit",
+            "submitting": "Submitting...",
+            "success-message": "Thank you! Your consultation request has been submitted successfully. We will contact you soon.",
+            "validation": {
+                "name-required": "Name is required",
+                "name-min": "Name must be at least 2 characters",
+                "name-max": "Name must not exceed 50 characters",
+                "email-required": "Email is required",
+                "email-invalid": "Please enter a valid email address",
+                "phone-required": "Phone number is required",
+                "phone-invalid": "Please enter a valid phone number",
+                "service-required": "Please select a service",
+                "project-details-required": "Project details are required",
+                "project-details-min": "Project details must be at least 10 characters",
+                "project-details-max": "Project details must not exceed 1000 characters"
+            }
+        },
+        "info-cards": {
+            "phone": "Phone Number",
+            "phone-description": "+20 1140067845",
+            "email": "Email",
+            "email-description": "info@connectedbridges.com",
+            "location": "Location",
+            "live-location-title": "Live Location",
+            "location-description": "Office9, 1321, King Abdulaziz St. Riyadh, KSA",
+            "location-description-blocked": "Map unavailable - blocked by browser"
+        }
+    },
     "footer": {
         "title": "Footer",
         "description": "Saudi company offering integrated design & construction solutions, enhanced with AI and security technologies — serving government and private sector.",

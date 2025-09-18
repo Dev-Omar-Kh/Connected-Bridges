@@ -9,9 +9,11 @@
     --light-blue-color: #23B6D8;
     --blue-color: #005F75;
     --dark-blue-color: #184C57;
+    --red-color: #FF0000;
     /* ====== custom-colors ====== */
     --mid-gray-color: rgba(128, 128, 128, 0.08);
     --dark-blue-opacity-color: rgba(24, 76, 87, 0.9);
+    --dark-blue-opacity-color-2: rgba(24, 76, 87, 0.7);
     --blue-color-opacity: rgba(35, 182, 216, 0.25);
     --white-color-opacity: rgba(255, 255, 255, 0.25);
 }
@@ -29,6 +31,10 @@ body {
 
 ::-webkit-scrollbar-thumb {
     background-color: var(--dark-blue-color);
+}
+
+.scrollbar-hide {
+    scrollbar-width: none;
 }
 
 .common-p-inline {

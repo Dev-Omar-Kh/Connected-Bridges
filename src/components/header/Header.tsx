@@ -135,7 +135,7 @@ const naveLinks = (t: TFunction) => {
             id: 6,
             icon: Headset,
             title: 'header.contact',
-            link: ROUTES.CONTACT_ROUTE
+            link: ROUTES.CONTACT_US_ROUTE
         },
     ]
 

@@ -8,6 +8,6 @@ export const ROUTES = {
     ALL_SERVICES_ROUTE: 'all-services',
     PROJECTS_ROUTE: 'projects',
     INSIGHTS_ROUTE: 'insights',
-    CONTACT_ROUTE: 'contact',
+    CONTACT_US_ROUTE: 'contact-us',
     NOT_FOUND_ROUTE: '*',
 }
