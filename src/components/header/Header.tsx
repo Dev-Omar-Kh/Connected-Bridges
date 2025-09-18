@@ -24,11 +24,11 @@ import { useTranslation } from 'react-i18next';
 import TranslateBtn from '../buttons/TranslateBtn';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 import type { TFunction } from 'i18next';
+import { NavLink } from 'react-router-dom';
 
 // ====== import images ====== //
 import whiteLogo from '../../assets/images/white-logo-size.png';
 import colorsLogo from '../../assets/images/light-bg-logo.png';
-import { NavLink } from 'react-router-dom';
 
 // ====== static-data ====== //
 
@@ -293,7 +293,10 @@ export default function Header() {
                                                 max-[1065px]:static max-[1065px]:left-0 max-[1065px]:translate-x-0 max-[1065px]:min-w-full
                                                 max-[1065px]:rounded-md max-[1065px]:shadow-none
                                             '
-                                            {...(isMobile ? dropdownAnimations.mobileContainer : dropdownAnimations.container)}
+                                            {...(isMobile ? {
+                                                ...dropdownAnimations.mobileContainer,
+                                                transition: dropdownAnimations.mobileContainer.smallTransition
+                                            } : dropdownAnimations.container)}
                                         >
 
                                             <div 

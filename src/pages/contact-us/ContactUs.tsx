@@ -115,16 +115,12 @@ export default function ContactUs() {
 
     const onSubmit = async (data: ContactFormData) => {
         try {
-            console.log('Form submitted with data:', data);
             
-            // Use the consultation submit service
             const result = await submitConsultationMock(data);
             
             if (result.success) {
-                // Show success message
                 alert(t('contact-us.form.success-message') || 'Form submitted successfully!');
             } else {
-                // Show error message
                 alert(result.message || 'Error submitting form. Please try again.');
             }
             

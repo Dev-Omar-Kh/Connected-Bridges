@@ -39,8 +39,6 @@ export default function AboutUs({ fullData = false }: AboutUsProps) {
 
     ];
 
-    console.log(fullData);
-
     return <React.Fragment>
 
         <div className={`grid gap-5 items-center ${fullData ? 'grid-cols-1' : 'grid-cols-2 max-[1077px]:grid-cols-2 max-[770px]:grid-cols-1'}`}>

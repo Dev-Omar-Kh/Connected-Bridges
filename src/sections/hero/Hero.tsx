@@ -1,19 +1,19 @@
 import { Headset, LayoutDashboard } from 'lucide-react';
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 export default function Hero() {
 
     const { t, i18n } = useTranslation();
-    const [offsetY, setOffsetY] = useState(0);
-    const handleScroll = () => setOffsetY(window.pageYOffset);
+    // const [offsetY, setOffsetY] = useState(0);
+    // const handleScroll = () => setOffsetY(window.pageYOffset);
 
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
+    // useEffect(() => {
+    //     window.addEventListener('scroll', handleScroll);
 
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    //     return () => window.removeEventListener('scroll', handleScroll);
+    // }, []);
 
     const ctaBtns = [
         {id: 1, label: t('hero.consultation'), href: '/', icon: Headset, variant: 'primary'},
@@ -89,7 +89,7 @@ export default function Hero() {
 
             <div className="absolute inset-0 z-10">
                 <video 
-                    style={{ transform: `translateY(${offsetY * 0.5}px)` }}
+                    // style={{ transform: `translateY(${offsetY * 0.5}px)` }}
                     src="https://neom.scene7.com/is/content/neom/20250626_REDEFINING_16X9_4K_MASTER_V9_WEB-3" 
                     autoPlay muted loop className='w-full h-full object-cover scale-150'
                 />

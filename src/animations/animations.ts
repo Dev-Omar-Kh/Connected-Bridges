@@ -44,6 +44,10 @@ export const dropdownAnimations = {
         transition: { 
             duration: 0.4, 
             ease: easeInOut,
+        },
+        smallTransition: { 
+            duration: 0.2, 
+            ease: easeInOut,
         }
     },
 
