@@ -287,6 +287,14 @@
             "location-description-blocked": "Map unavailable - blocked by browser"
         }
     },
+    "our-projects": {
+        "title": "Our Projects",
+        "description": "Our portfolio showcases innovative projects that combine design excellence with cutting-edge security technologies and AI solutions."
+    },
+    "insights": {
+        "title": "Our Insights",
+        "description": "Our insights showcase our expertise in integrated design, construction, and cutting-edge security technologies and AI solutions."
+    },
     "footer": {
         "title": "Footer",
         "description": "Saudi company offering integrated design & construction solutions, enhanced with AI and security technologies — serving government and private sector.",
