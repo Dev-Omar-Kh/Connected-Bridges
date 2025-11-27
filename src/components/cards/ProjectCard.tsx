@@ -3,6 +3,7 @@ import image from '../../assets/images/projects/neom-project.jpg';
 import { CalendarDays, CircleArrowOutUpRight, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { motion, type Variants } from 'framer-motion';
 
 const ProjectInfo = ({ icon, title }: { icon: React.ReactNode, title: string }) => {
 
@@ -17,13 +18,19 @@ const ProjectInfo = ({ icon, title }: { icon: React.ReactNode, title: string }) 
 
 }
 
-export default function ProjectCard() {
+const MotionLink = motion(Link);
 
-    const {i18n} = useTranslation();
+interface ProjectCardProps {
+    variants?: Variants;
+}
+
+export default function ProjectCard({ variants }: ProjectCardProps) {
+
+    const { i18n } = useTranslation();
 
     return <React.Fragment>
 
-        <Link to={'/projects/neom-smart-city-infrastructure/1'} className='rounded-lg overflow-hidden bg-[var(--white-color)] group'>
+        <MotionLink to={'/projects/neom-smart-city-infrastructure/1'} className='rounded-lg overflow-hidden bg-[var(--white-color)] group' variants={variants}>
 
             <div className='overflow-hidden'>
                 <img src={image} alt={'title'} className='w-full h-64 object-cover group-hover:scale-105 duration-300' />
@@ -41,7 +48,7 @@ export default function ProjectCard() {
 
                     <ProjectInfo icon={<CalendarDays size={18} />} title='2024' />
 
-                    <button 
+                    <button
                         className='
                             p-2.5 rounded-md bg-[var(--mid-gray-color)] text-[var(--light-blue-color)] duration-300
                             group-hover:bg-[var(--light-blue-color)] group-hover:text-[var(--white-color)]
@@ -54,7 +61,7 @@ export default function ProjectCard() {
 
             </div>
 
-        </Link>
+        </MotionLink>
 
     </React.Fragment>
 

@@ -3,7 +3,7 @@ import { ChevronRight } from 'lucide-react';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { dropdownAnimations, getChevronAnimation } from '../../animations/animations';
+import { getChevronAnimation, mobileDropdownContainer } from './ServicesCardAnimation';
 
 type ServicesCardProps = {
     data: {
@@ -65,7 +65,9 @@ export default function ServicesCard({ data }: ServicesCardProps) {
                 {isOpen && 
                     <motion.div 
                         className="w-full overflow-hidden"
-                        {...dropdownAnimations.mobileContainer}
+                        initial={mobileDropdownContainer.hidden}
+                        animate={mobileDropdownContainer.visible}
+                        exit={mobileDropdownContainer.exit}
                     >
 
                         <div 

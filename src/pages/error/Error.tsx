@@ -1,33 +1,14 @@
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Home } from 'lucide-react';
+import { containerVariants, itemVariants } from './animation';
 
 export default function Error() {
     const { t, i18n } = useTranslation();
 
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.3,
-            },
-        },
-    };
-
-    const itemVariants = {
-        hidden: { y: 20, opacity: 0 },
-        visible: {
-            y: 0,
-            opacity: 1,
-            transition: {
-                duration: 0.5,
-            },
-        },
-    };
-
-    return (
+    return <React.Fragment>
         <motion.section
             initial="hidden"
             animate="visible"
@@ -89,5 +70,5 @@ export default function Error() {
                 </motion.div>
             </div>
         </motion.section>
-    );
+    </React.Fragment>
 }

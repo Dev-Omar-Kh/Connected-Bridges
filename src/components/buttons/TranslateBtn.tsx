@@ -1,10 +1,9 @@
 import { ChevronRight, Languages } from 'lucide-react'
 import React, { useState, useRef, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion';
-import { dropdownAnimations, getChevronAnimation } from '../../animations/animations';
 import { useTranslation } from 'react-i18next';
-import Flag from 'react-world-flags'
-
+import Flag from 'react-world-flags';
+import { dropdownContainer, getChevronAnimation } from './animation';
 
 export default function TranslateBtn({isMobile, className, onClose}: {isMobile?: boolean, className?: string, onClose?: () => void}) {
 
@@ -71,7 +70,9 @@ export default function TranslateBtn({isMobile, className, onClose}: {isMobile?:
                         min-w-max bg-[var(--light-gray-color)] rounded-md shadow-md overflow-hidden
                         max-[1065px]:static max-[1065px]:left-0 max-[1065px]:translate-x-0
                     '
-                    {...dropdownAnimations.container}
+                    initial={dropdownContainer.hidden}
+                    animate={dropdownContainer.visible}
+                    exit={dropdownContainer.exit}
                 >
 
                     {languages.map(item => (

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { ROUTES } from '../../constants/routes';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -19,12 +19,11 @@ import {
     ShieldCheck, 
     Users
 } from 'lucide-react';
-import { dropdownAnimations, getChevronAnimation } from '../../animations/animations';
 import { useTranslation } from 'react-i18next';
 import TranslateBtn from '../buttons/TranslateBtn';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 import type { TFunction } from 'i18next';
-import { NavLink } from 'react-router-dom';
+import { container, getChevronAnimation, mobileContainer } from './animation';
 
 // ====== import images ====== //
 import whiteLogo from '../../assets/images/white-logo-size.png';
@@ -293,10 +292,10 @@ export default function Header() {
                                                 max-[1065px]:static max-[1065px]:left-0 max-[1065px]:translate-x-0 max-[1065px]:min-w-full
                                                 max-[1065px]:rounded-md max-[1065px]:shadow-none
                                             '
-                                            {...(isMobile ? {
-                                                ...dropdownAnimations.mobileContainer,
-                                                transition: dropdownAnimations.mobileContainer.smallTransition
-                                            } : dropdownAnimations.container)}
+                                            initial={isMobile ? mobileContainer.hidden : container.hidden}
+                                            animate={isMobile ? mobileContainer.visible : container.visible}
+                                            exit={isMobile ? mobileContainer.exit : container.exit}
+                                            transition={isMobile ? mobileContainer.smallTransition : undefined}
                                         >
 
                                             <div 

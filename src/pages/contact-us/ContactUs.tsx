@@ -11,11 +11,13 @@ import { submitConsultationMock } from '../../services/consultationSubmit';
 import InfoCard from '../../components/cards/InfoCard';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import type { IconType } from 'react-icons/lib';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import * as animations from './animation';
 
 // ====== data ====== //
 
-const options = (t: TFunction) => AllServicesData(t).map(service => ({value: service.id, label: service.title}));
+const options = (t: TFunction) => AllServicesData(t).map(service => ({ value: service.id, label: service.title }));
 
 const fields = (t: TFunction) => [
 
@@ -115,15 +117,15 @@ export default function ContactUs() {
 
     const onSubmit = async (data: ContactFormData) => {
         try {
-            
+
             const result = await submitConsultationMock(data);
-            
+
             if (result.success) {
                 alert(t('contact-us.form.success-message') || 'Form submitted successfully!');
             } else {
                 alert(result.message || 'Error submitting form. Please try again.');
             }
-            
+
         } catch (error) {
             console.error('Error submitting form:', error);
             alert('Error submitting form. Please try again.');
@@ -132,20 +134,30 @@ export default function ContactUs() {
 
     const [mapError, setMapError] = useState(false);
 
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, amount: 0.1 });
+
     return <React.Fragment>
 
-        <section className='space-y-10 pb-20'>
+        <motion.section
+            className='space-y-10 pb-20'
+            ref={ref}
+            variants={animations.pageContainer}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+        >
 
             <PageTitle title={'contact-us.title'} description={'contact-us.description'} />
 
             <div className='common-p-inline grid grid-cols-5 items-start gap-5 max-[1185px]:grid-cols-2 max-[920px]:grid-cols-1'>
 
-                <form 
-                    onSubmit={handleSubmit(onSubmit)} 
+                <motion.form
+                    onSubmit={handleSubmit(onSubmit)}
                     className='p-5 col-span-2 max-[1185px]:col-span-1 rounded-lg bg-[var(--white-color)] shadow-md space-y-5'
+                    variants={animations.formContainer}
                 >
 
-                    <h4 
+                    <h4
                         className={`
                             text-3xl font-bold
                             ${i18n.language === 'ar' ? 'bg-gradient-to-r' : 'bg-gradient-to-l'}
@@ -155,20 +167,24 @@ export default function ContactUs() {
                         {t('contact-us.form.title')}
                     </h4>
 
-                    <div className='grid grid-cols-1 gap-2.5'>
+                    <motion.div
+                        className='grid grid-cols-1 gap-2.5'
+                        variants={animations.formFieldsContainer}
+                    >
 
                         {fields(t).map((field) => (
-                            <FormBuilder 
-                                key={field.id} 
-                                {...field} 
-                                register={register}
-                                errors={errors}
-                                value={watchedValues[field.id] || ''}
-                            />
+                            <motion.div key={field.id} variants={animations.formField}>
+                                <FormBuilder
+                                    {...field}
+                                    register={register}
+                                    errors={errors}
+                                    value={watchedValues[field.id] || ''}
+                                />
+                            </motion.div>
                         ))}
 
-                        <button 
-                            type='submit' 
+                        <motion.button
+                            type='submit'
                             disabled={isSubmitting}
                             className={`
                                 cursor-pointer
@@ -177,38 +193,45 @@ export default function ContactUs() {
                                 from-[var(--light-blue-color)] to-[var(--dark-blue-color)] font-medium
                                 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}
                             `}
+                            variants={animations.formField}
                         >
                             {isSubmitting ? t('contact-us.form.submitting') : t('contact-us.form.submit')}
-                        </button>
+                        </motion.button>
 
-                    </div>
+                    </motion.div>
 
-                </form>
+                </motion.form>
 
-                <div className='grid grid-cols-2 gap-5 col-span-3 max-[1185px]:col-span-1 max-[1185px]:grid-cols-1'>
+                <motion.div
+                    className='grid grid-cols-2 gap-5 col-span-3 max-[1185px]:col-span-1 max-[1185px]:grid-cols-1'
+                    variants={animations.infoCardsContainer}
+                >
 
                     {infoCardsData.map((card, idx) => (
-                        <InfoCard 
-                            key={idx} 
-                            icon={card.icon} 
-                            title={card.title} 
-                            description={card.description} 
-                            link={card.link}
-                            cols={card.cols}
-                        />
+                        <motion.div key={idx} variants={animations.infoCard} className={card.cols}>
+                            <InfoCard
+                                icon={card.icon}
+                                title={card.title}
+                                description={card.description}
+                                link={card.link}
+                            />
+                        </motion.div>
                     ))}
 
-                    <div className='col-span-2 space-y-5 p-5 rounded-lg bg-[var(--white-color)] shadow-md max-[1185px]:col-span-1'>
+                    <motion.div
+                        className='col-span-2 space-y-5 p-5 rounded-lg bg-[var(--white-color)] shadow-md max-[1185px]:col-span-1'
+                        variants={animations.mapContainer}
+                    >
 
                         <h4 className='text-2xl font-bold text-[var(--dark-blue-color)]'>{t('contact-us.info-cards.live-location-title')}</h4>
 
                         {!mapError ? (
-                            <iframe 
-                                src={mapLink} 
-                                width="100%" 
-                                height="250" 
-                                className='border-0 rounded-lg bg-[var(--mid-gray-color)]' 
-                                allowFullScreen 
+                            <iframe
+                                src={mapLink}
+                                width="100%"
+                                height="250"
+                                className='border-0 rounded-lg bg-[var(--mid-gray-color)]'
+                                allowFullScreen
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
                                 onError={() => setMapError(true)}
@@ -219,13 +242,13 @@ export default function ContactUs() {
                             </div>
                         )}
 
-                    </div>
+                    </motion.div>
 
-                </div>
+                </motion.div>
 
             </div>
 
-        </section>
+        </motion.section>
 
     </React.Fragment>
 

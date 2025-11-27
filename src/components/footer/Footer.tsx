@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import { ROUTES } from '../../constants/routes';
 import type { ElementType } from 'react';
 import React from 'react';
+import { motion } from 'framer-motion';
+import { staggerContainer, toTopVariants } from './animation';
 
 interface FooterLink {
     label: string;
@@ -57,7 +59,7 @@ export default function Footer() {
 
     return <React.Fragment>
 
-        <footer 
+        <footer
             className={`
                 text-[var(--light-gray-color)] pt-24 pb-8 common-p-inline sm:px-6 lg:px-16
                 ${i18n.language === 'ar' ? 'bg-gradient-to-r' : 'bg-gradient-to-l'} from-[var(--blue-color)] to-[var(--dark-blue-color)]
@@ -66,11 +68,15 @@ export default function Footer() {
 
             <div className='container mx-auto'>
 
-                <div 
+                <motion.div
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
                     className='grid grid-cols-[3fr_3fr_2fr_3fr] gap-12 max-[1090px]:grid-cols-[3fr_3fr] max-[660px]:grid-cols-1'
                 >
 
-                    <div className='space-y-6'>
+                    <motion.div variants={toTopVariants} className='space-y-6'>
 
                         <Link to={ROUTES.HOME_ROUTE}>
                             <img src={whiteLogo} alt="Connected Bridges Logo" className='w-40' />
@@ -80,11 +86,11 @@ export default function Footer() {
                             {t('footer.description')}
                         </p>
 
-                    </div>
+                    </motion.div>
 
                     {footerLinks.map((section) => (
 
-                        <div key={section.title}>
+                        <motion.div variants={toTopVariants} key={section.title}>
 
                             <h3 className='text-xl font-semibold mb-5 relative'>
                                 <span className='absolute start-0 -bottom-2 h-0.5 w-12 bg-[var(--light-blue-color)]'></span>
@@ -106,11 +112,11 @@ export default function Footer() {
                                 ))}
                             </ul>
 
-                        </div>
+                        </motion.div>
 
                     ))}
 
-                    <div>
+                    <motion.div variants={toTopVariants}>
 
                         <h3 className='text-xl font-semibold mb-5 relative'>
                             <span className='absolute start-0 -bottom-2 h-0.5 w-12 bg-[var(--light-blue-color)]'></span>
@@ -131,8 +137,8 @@ export default function Footer() {
                                         transition-colors duration-300 placeholder:text-[var(--gray-color)]
                                     '
                                 />
-                                <button 
-                                    type='submit' 
+                                <button
+                                    type='submit'
                                     className={`
                                         absolute end-3 top-1/2 -translate-y-1/2 text-[var(--gray-color)] 
                                         hover:text-[var(--light-blue-color)] transition-colors duration-300
@@ -161,9 +167,9 @@ export default function Footer() {
                             </div>
                         </form>
 
-                    </div>
+                    </motion.div>
 
-                </div>
+                </motion.div>
 
                 <div className='mt-16 pt-8 border-t border-[var(--white-color-opacity)] text-center text-[var(--sugar-color)]'>
                     <p>&copy; {new Date().getFullYear()} Connected Bridges. {t('footer.copyright')}</p>
@@ -175,3 +181,4 @@ export default function Footer() {
 
     </React.Fragment>
 }
+

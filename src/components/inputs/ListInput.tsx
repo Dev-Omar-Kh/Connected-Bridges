@@ -2,8 +2,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import React, { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import type { UseFormRegister, FieldValues, Path } from "react-hook-form";
-import { dropdownAnimations } from "../../animations/animations";
 import { ChevronRight } from "lucide-react";
+import { dropdownContainerVariants } from "./animation";
 
 type ListOption = {
     value: string | number;
@@ -182,7 +182,7 @@ export default function ListInput<T extends FieldValues>({
                         rotate: isOpen ? (i18n.language === 'ar' ? -90 : 90) : 0,
                         color: isHovered && !disabled ? 'var(--dark-blue-color)' : undefined
                     }}
-                    transition={{ duration: 0.2, ease: "easeInOut" }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
                 >
                     <ChevronRight className={i18n.language === 'ar' ? 'rotate-180' : ''} />
                 </motion.div>
@@ -192,11 +192,9 @@ export default function ListInput<T extends FieldValues>({
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        variants={dropdownAnimations.mobileContainer}
-                        initial="initial"
-                        animate="animate"
-                        exit="exit"
-                        transition={dropdownAnimations.mobileContainer.transition}
+                        initial={dropdownContainerVariants.hidden}
+                        animate={dropdownContainerVariants.visible}
+                        exit={dropdownContainerVariants.exit}
                         className={`
                             absolute top-full left-0 right-0 mt-1 bg-[var(--white-color)] border border-[var(--dark-blue-opacity-color)] 
                             rounded-md shadow-lg z-30 max-h-60 overflow-y-auto overflow-x-hidden scrollbar-hide

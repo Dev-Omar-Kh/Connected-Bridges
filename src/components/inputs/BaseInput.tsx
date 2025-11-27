@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import type { UseFormRegister, FieldValues, Path } from "react-hook-form";
 import LoadingInput from "./LoadingInput";
-import { opacityAnimation } from "../../animations/animations";
 import { VscEye, VscEyeClosed } from "react-icons/vsc";
+import { opacityVariants } from "./animation";
 
 type BaseInputProps<T extends FieldValues> = {
     id: Path<T>;
@@ -121,7 +121,9 @@ export default function BaseInput<T extends FieldValues>({
 
                 {(isFocused || hasValue) && !passType && (
                     <motion.div 
-                        variants={opacityAnimation} initial='hidden' animate='visible' exit='exit'
+                        initial={opacityVariants.hidden}
+                        animate={opacityVariants.visible}
+                        exit={opacityVariants.exit}
                         className={`absolute bottom-4.25 ${i18n.language === 'en' ? 'right-2.5' : 'left-2.5'}`}
                     >
                         <LoadingInput />
@@ -148,14 +150,16 @@ export default function BaseInput<T extends FieldValues>({
 
                         <motion.button 
                             key={'s1'} type='button' className='cursor-pointer' 
-                            variants={opacityAnimation} initial='hidden' animate='visible' 
+                            initial={opacityVariants.hidden}
+                            animate={opacityVariants.visible}
                         >
                             <VscEye />
                         </motion.button> : 
 
                         <motion.button 
                             key={'h1'} className='cursor-pointer' type='button'
-                            variants={opacityAnimation} initial='hidden' animate='visible' 
+                            initial={opacityVariants.hidden}
+                            animate={opacityVariants.visible}
                         >
                             <VscEyeClosed />
                         </motion.button>

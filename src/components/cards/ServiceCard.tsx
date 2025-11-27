@@ -57,7 +57,7 @@ export default function ServiceCard({ title, description, icon : Icon, isLink = 
         {isLink ? (
             <Link 
                 to={`/${link}`} 
-                className='p-5 flex flex-col gap-2.5 rounded-lg bg-[var(--white-color)] group'
+                className='p-5 flex flex-col gap-2.5 rounded-lg bg-[var(--white-color)] group h-full'
             >
 
                 <ServiceCardContent title={title} description={description} icon={Icon} />
@@ -65,7 +65,7 @@ export default function ServiceCard({ title, description, icon : Icon, isLink = 
             </Link>
         ) : (
             <div 
-                className='p-5 flex flex-col gap-2.5 rounded-lg bg-[var(--white-color)] group'
+                className='p-5 flex flex-col gap-2.5 rounded-lg bg-[var(--white-color)] group h-full'
             >
 
                 <ServiceCardContent title={title} description={description} icon={Icon} />

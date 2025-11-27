@@ -7,9 +7,9 @@ import { GoGoal } from 'react-icons/go';
 import { IoDiamondOutline } from 'react-icons/io5';
 import { FaRegEye } from 'react-icons/fa6';
 import Achievements from '../../sections/achievements/Achievements';
-// import SectionLayout from '../../layouts/SectionLayout';
-// import Clients from '../../sections/our-clients/Clients';
-// import Partners from '../../sections/partners/Partners';
+import { motion } from 'framer-motion';
+import { useInView } from '../../hooks/useInView';
+import { pageContainer, contentContainer, goalsContainer, goalItem } from './animation';
 
 const aboutGoals = [
 
@@ -36,38 +36,45 @@ const aboutGoals = [
 export default function About() {
 
     const { t } = useTranslation();
+    const [ref, isInView] = useInView({ threshold: 0.1, triggerOnce: true });
 
     return <React.Fragment>
 
-        <section className='space-y-20 pb-20'>
+        <motion.section
+            ref={ref}
+            className='space-y-20 pb-20'
+            variants={pageContainer}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+        >
 
             <PageTitle title={'about.title'} />
 
-            <div className='common-p-inline grid grid-cols-2 gap-5 max-[930px]:grid-cols-1'>
+            <motion.div
+                className='common-p-inline grid grid-cols-2 gap-5 max-[930px]:grid-cols-1'
+                variants={contentContainer}
+            >
 
                 <AboutUs fullData={true} />
 
-                <div className='space-y-5'>
+                <motion.div
+                    className='space-y-5'
+                    variants={goalsContainer}
+                >
 
                     {aboutGoals.map((goal, index) => (
-                        <AboutGoalsCard key={index} icon={goal.icon} title={t(goal.title)} description={t(goal.description)} />
+                        <motion.div key={index} variants={goalItem}>
+                            <AboutGoalsCard icon={goal.icon} title={t(goal.title)} description={t(goal.description)} />
+                        </motion.div>
                     ))}
 
-                </div>
+                </motion.div>
 
-            </div>
-
-            {/* <SectionLayout className='gap-7.5' title='overview.clients.title'>
-                <Clients />
-            </SectionLayout> */}
+            </motion.div>
 
             <Achievements />
 
-            {/* <SectionLayout className='gap-5' title='overview.partners.title'>
-                <Partners />
-            </SectionLayout> */}
-
-        </section>
+        </motion.section>
 
     </React.Fragment>
 
